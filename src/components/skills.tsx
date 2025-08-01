@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Code, Brush, Database, Server, Component, Settings, BrainCircuit, Sheet, Network, GitBranch, HardDrive, Bot } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -46,27 +47,41 @@ const otherSkills = [
   { 
     name: "VS Code", 
     Icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M16.5 3.5L12 8l4.5 4.5L21 8l-4.5-4.5zM7.5 20.5L3 16l4.5-4.5L12 16l-4.5 4.5zM8 12l4-4 4 4-4 4-4-4z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
+        <path d="M17.5 2.5l-11 11M2 12l4.5 4.5L11 21l9-9-4.5-4.5L11 3z"/>
+        <path d="M8.5 7.5L3 13l6 6 5.5-5.5"/>
+        <path d="M14.5 2.5L21 9"/>
+      </svg>
     )
   },
   { 
     name: "Visual Studio", 
     Icon: () => (
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M22 10l-6-6-6 6-6-6-4 4v12l4 4 6-6 6 6 6-6 4-4V10z"/></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
+        <path d="M22 8.5l-3 3-3-3-3 3-3-3-3 3-3-3-2.5 2.5v11l2.5 2.5 3-3 3 3 3-3 3 3 3-3 3 3 2.5-2.5v-11z"/>
+        <path d="M2 12l7-7 3.5 3.5-7 7z"/>
+       </svg>
     ) 
   },
   { name: "MSSQL", Icon: Database },
   { 
     name: "WinSCP", 
     Icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9.5 14.5l2.5-2.5 2.5 2.5"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <path d="M9.5 16.5l2.5-3 2.5 3"/>
+        <path d="M12 10.5v6"/>
+      </svg>
     ) 
   },
   { name: "S3 Browser", Icon: HardDrive },
   { 
     name: "Postman", 
     Icon: () => (
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v8"/><path d="M16 12H8"/><path d="M22 12h-4"/><path d="M6 12H2"/></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
+          <path d="M12.65,3.14,10.79,5.29,14.24,9,12,11.5,9.76,9,13.21,5.29,11.35,3.14,3,12.5,11.35,21.86l1.86-2.15L9.76,16,12,13.5l2.24,2.54,3.45-3.81,1.86,2.15L21,12.5Z"/>
+       </svg>
     )
   },
   { name: "AI Tools", Icon: Bot },
