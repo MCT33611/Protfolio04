@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Brush, Database, Server, Component, Settings, BrainCircuit, Sheet, Network, GitBranch } from 'lucide-react';
+import { Code, Brush, Database, Server, Component, Settings, BrainCircuit, Sheet, Network, GitBranch, HardDrive, Bot } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 type Skill = {
@@ -43,6 +43,33 @@ const skillsData: { category: string, Icon: LucideIcon, skills: Skill[] }[] = [
 const otherSkills = [
   { name: "API Development", Icon: Settings },
   { name: "Excel Sheet", Icon: Sheet },
+  { 
+    name: "VS Code", 
+    Icon: () => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M16.5 3.5L12 8l4.5 4.5L21 8l-4.5-4.5zM7.5 20.5L3 16l4.5-4.5L12 16l-4.5 4.5zM8 12l4-4 4 4-4 4-4-4z"/></svg>
+    )
+  },
+  { 
+    name: "Visual Studio", 
+    Icon: () => (
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M22 10l-6-6-6 6-6-6-4 4v12l4 4 6-6 6 6 6-6 4-4V10z"/></svg>
+    ) 
+  },
+  { name: "MSSQL", Icon: Database },
+  { 
+    name: "WinSCP", 
+    Icon: () => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9.5 14.5l2.5-2.5 2.5 2.5"/></svg>
+    ) 
+  },
+  { name: "S3 Browser", Icon: HardDrive },
+  { 
+    name: "Postman", 
+    Icon: () => (
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v8"/><path d="M16 12H8"/><path d="M22 12h-4"/><path d="M6 12H2"/></svg>
+    )
+  },
+  { name: "AI Tools", Icon: Bot },
 ];
 
 export function Skills() {
@@ -58,49 +85,51 @@ export function Skills() {
       }}
     >
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
-      <div className="container mx-auto px-4 md:px-6 relative lg:pl-24">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Tech Proficiency</h2>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
-              My technical level and experience in various fields.
-            </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="space-y-8">
-               {skillsData.map((category) => (
-                  <div key={category.category}>
-                    <h3 className="text-xl font-semibold mb-6 flex items-center gap-3"><category.Icon className="w-6 h-6 text-primary"/> {category.category}</h3>
-                    <div className="space-y-5">
-                      {category.skills.map(skill => (
-                        <div key={skill.name} className="flex items-center gap-4">
-                          <span className="w-28 text-muted-foreground text-right">{skill.name}</span>
-                          <div className="flex-1 h-2 bg-secondary rounded-full">
-                            <div className="h-2 bg-primary rounded-full animate-in fade-in-right" style={{ width: `${skill.level}%`, animationDelay: `${skill.level * 5}ms`, animationDuration: '1s' }}></div>
-                          </div>
-                          <span className="w-10 text-left text-muted-foreground">{skill.level}%</span>
-                        </div>
-                      ))}
-                    </div>
+      <div className="container mx-auto px-4 md:px-6 relative">
+        <div className="lg:pl-24">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                   </div>
-              ))}
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Tech Proficiency</h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
+                  My technical level and experience in various fields.
+                </p>
             </div>
-            <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-6 flex items-center gap-3"><GitBranch className="w-6 h-6 text-primary" /> Tools & Other Skills</h3>
-                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                      {otherSkills.map((skill) => (
-                        <Card key={skill.name} className="bg-card/50 backdrop-blur-sm border-primary/20 rounded-xl p-4 flex flex-col items-center justify-center gap-2 text-center hover:bg-primary/10 transition-colors">
-                            <skill.Icon className="w-8 h-8 text-primary mb-2" />
-                            <h4 className="text-md font-semibold">{skill.name}</h4>
-                        </Card>
-                      ))}
-                   </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div className="space-y-8">
+                   {skillsData.map((category) => (
+                      <div key={category.category}>
+                        <h3 className="text-xl font-semibold mb-6 flex items-center gap-3"><category.Icon className="w-6 h-6 text-primary"/> {category.category}</h3>
+                        <div className="space-y-5">
+                          {category.skills.map(skill => (
+                            <div key={skill.name} className="flex items-center gap-4">
+                              <span className="w-28 text-muted-foreground text-right">{skill.name}</span>
+                              <div className="flex-1 h-2 bg-secondary rounded-full">
+                                <div className="h-2 bg-primary rounded-full animate-in fade-in-right" style={{ width: `${skill.level}%`, animationDelay: `${skill.level * 5}ms`, animationDuration: '1s' }}></div>
+                              </div>
+                              <span className="w-10 text-left text-muted-foreground">{skill.level}%</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                  ))}
+                </div>
+                <div className="space-y-8">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6 flex items-center gap-3"><GitBranch className="w-6 h-6 text-primary" /> Tools & Other Skills</h3>
+                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                          {otherSkills.map((skill) => (
+                            <Card key={skill.name} className="bg-card/50 backdrop-blur-sm border-primary/20 rounded-xl p-4 flex flex-col items-center justify-center gap-2 text-center hover:bg-primary/10 transition-colors">
+                                <skill.Icon />
+                                <h4 className="text-md font-semibold">{skill.name}</h4>
+                            </Card>
+                          ))}
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>
