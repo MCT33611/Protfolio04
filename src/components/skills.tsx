@@ -48,9 +48,9 @@ const otherSkills = [
     name: "VS Code", 
     Icon: () => (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
-        <path d="M17.5 2.5l-11 11M2 12l4.5 4.5L11 21l9-9-4.5-4.5L11 3z"/>
-        <path d="M8.5 7.5L3 13l6 6 5.5-5.5"/>
-        <path d="M14.5 2.5L21 9"/>
+        <path d="M16.5 21.5l-8-8 8-8M8.5 3.5l8 8-8 8"/>
+        <path d="M3 12h1"/>
+        <path d="M21 12h-1"/>
       </svg>
     )
   },
