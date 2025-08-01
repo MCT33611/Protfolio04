@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background/80 backdrop-blur-sm text-foreground animate-in fade-in duration-1000">
+    <div className="min-h-screen bg-background/80 backdrop-blur-sm text-foreground animate-in fade-in duration-1000 lg:pl-24">
       <section 
         className="w-full py-20 md:py-32 lg:py-40"
         style={{
