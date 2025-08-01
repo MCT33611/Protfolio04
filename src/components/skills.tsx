@@ -47,8 +47,18 @@ const otherSkills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20">
-      <div className="container mx-auto px-4 md:px-6">
+    <section 
+      id="skills" 
+      className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20 relative"
+      style={{
+        backgroundImage: `url('https://placehold.co/1920x1080.png')`, // Replace with your image path
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      <div className="container mx-auto px-4 md:px-6 relative">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
           
           <div className="flex-1 space-y-4 text-center lg:text-left">
