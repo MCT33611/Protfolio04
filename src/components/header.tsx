@@ -74,7 +74,7 @@ export function Header() {
   return (
     <>
       {/* Desktop/Tablet Sidebar */}
-      <header className="fixed top-1/2 -translate-y-1/2 left-4 z-40 bg-card/80 backdrop-blur-sm text-foreground hidden lg:flex flex-col items-center p-4 rounded-full border border-border shadow-lg">
+      <header className="fixed top-1/2 -translate-y-1/2 left-4 z-40 text-foreground hidden lg:flex flex-col items-center p-4 rounded-full">
         <NavContent />
       </header>
 

@@ -15,7 +15,7 @@ export function About() {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="container mx-auto px-4 md:px-6 bg-background/80 backdrop-blur-sm py-12 rounded-2xl">
+      <div className="container mx-auto px-4 md:px-6 py-12 rounded-2xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-in fade-in slide-in-from-left-12 duration-1000 relative">
                <div className="relative w-full max-w-md mx-auto">

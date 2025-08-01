@@ -6,7 +6,7 @@ import { Contact } from "@/components/contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background/80 backdrop-blur-sm">
+    <div className="flex flex-col min-h-screen">
       <main className="flex-grow lg:pl-24">
         <Hero />
         <About />
