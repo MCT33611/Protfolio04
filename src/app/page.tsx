@@ -1,9 +1,8 @@
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
-import { Blogs } from "@/components/blogs";
+import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -12,10 +11,9 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
-        <Blogs />
+        <Projects />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }

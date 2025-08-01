@@ -1,54 +1,63 @@
 "use client"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Twitter, Menu, X, Home, User, Briefcase, BotMessageSquare, Send } from 'lucide-react';
+import { Home, User, Lightbulb, Briefcase, Mail, Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const navLinks = [
-    { href: '#home', label: 'Home', Icon: Home },
-    { href: '#about', label: 'About', Icon: User },
-    { href: '#skills', label: 'Skills', Icon: BotMessageSquare },
-    { href: '#blogs', label: 'Blogs', Icon: Briefcase },
-    { href: '#contact', label: 'Contact', Icon: Send },
+    { href: '/', label: 'Home', Icon: Home },
+    { href: '/about', label: 'About', Icon: User },
+    { href: '/#skills', label: 'Skills', Icon: Lightbulb },
+    { href: '/#projects', label: 'Projects', Icon: Briefcase },
+    { href: '/#contact', label: 'Contact', Icon: Mail },
   ];
-
-    const socialLinks = [
+  
+  const socialLinks = [
     { name: 'GitHub', Icon: Github, url: '#' },
     { name: 'LinkedIn', Icon: Linkedin, url: '#' },
     { name: 'Twitter', Icon: Twitter, url: '#' },
   ];
-
-  return (
+  
+  const NavContent = () => (
     <>
-      {/* Mobile Menu Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="fixed top-4 left-4 z-50 lg:hidden bg-card text-foreground hover:bg-primary/20"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        {isMenuOpen ? <X /> : <Menu />}
-      </Button>
-
-      {/* Sidebar */}
-      <header className={`fixed top-0 left-0 h-full z-40 bg-card text-foreground flex flex-col justify-between transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:w-20`}>
-        <div className="flex flex-col items-center">
-            <a href="#" className="text-2xl font-bold font-headline text-primary mt-8 mb-12">
-            F
-            </a>
-            <nav className="flex flex-col items-center gap-6">
-            {navLinks.map((link) => (
-                <Button key={link.href} variant="ghost" size="icon" asChild className="rounded-full hover:bg-primary/20">
-                <a href={link.href} title={link.label}>
-                    <link.Icon className="h-5 w-5" />
-                </a>
-                </Button>
-            ))}
-            </nav>
-        </div>
-        <div className="flex flex-col items-center gap-4 mb-8">
+      <Link href="/" className="text-3xl font-bold font-headline text-primary mb-12 hidden lg:block">
+        F
+      </Link>
+      <nav className="flex flex-col items-center gap-4">
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+          return (
+            <Button
+              key={link.href}
+              variant="ghost"
+              asChild
+              className={cn(
+                "w-full justify-start gap-4 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 rounded-full",
+                "lg:w-auto lg:justify-center lg:h-12 lg:w-12",
+                isActive && "text-primary bg-primary/10",
+              )}
+            >
+              <Link href={link.href} title={link.label}>
+                <link.Icon className="h-5 w-5" />
+                <span className="lg:hidden">{link.label}</span>
+              </Link>
+            </Button>
+          )
+        })}
+      </nav>
+      <div className="flex-grow" />
+      <div className="flex-col items-center gap-2 mb-4 hidden lg:flex">
           {socialLinks.map(({ name, Icon, url }) => (
             <Button key={name} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary rounded-full transition-colors">
               <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
@@ -56,14 +65,34 @@ export function Header() {
               </a>
             </Button>
           ))}
-        </div>
+      </div>
+    </>
+  );
+
+  if (!isClient) return null;
+
+  return (
+    <>
+      {/* Desktop/Tablet Sidebar */}
+      <header className="fixed top-1/2 -translate-y-1/2 left-4 z-40 bg-card/80 backdrop-blur-sm text-foreground hidden lg:flex flex-col items-center p-4 rounded-full border border-border shadow-lg">
+        <NavContent />
       </header>
-       {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/60 z-30 lg:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
-      )}
+
+      {/* Mobile Bottom Bar */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 lg:hidden">
+        <div className="bg-card/80 backdrop-blur-sm rounded-full border border-border shadow-lg p-2 flex items-center gap-2">
+            {navLinks.map(link => {
+               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+               return (
+                <Button key={link.href} variant="ghost" size="icon" asChild className={cn("rounded-full", isActive && "bg-primary/20 text-primary")}>
+                    <Link href={link.href}>
+                        <link.Icon />
+                    </Link>
+                </Button>
+               )
+            })}
+        </div>
+      </div>
     </>
   );
 }

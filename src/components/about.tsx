@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from './ui/button';
 
 export function About() {
@@ -8,8 +9,8 @@ export function About() {
       className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20"
       style={{
         backgroundColor: '#1A1E23',
-        backgroundImage: `url("/background-pattern.svg")`,
-        backgroundSize: 'cover',
+        backgroundImage: `url("https://www.transparenttextures.com/patterns/cubes.png")`,
+        backgroundSize: 'auto',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
       }}
@@ -37,17 +38,13 @@ export function About() {
                         </div>
                     </div>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">About Me</h2>
-                    <h3 className="text-2xl font-semibold text-foreground">Hello!</h3>
                     <p className="max-w-[600px] text-muted-foreground md:text-lg">
-                    I'm a passionate Full-Stack Developer with a love for creating beautiful and functional web experiences. I thrive on solving complex problems and turning ideas into reality. My journey in tech has been driven by a constant curiosity and a desire to learn and grow.
-                    </p>
-                    <p className="max-w-[600px] text-muted-foreground md:text-lg">
-                    When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee.
+                    I'm a passionate Full-Stack Developer with a love for creating beautiful and functional web experiences. I thrive on solving complex problems and turning ideas into reality.
                     </p>
                 </div>
                 <div className="flex items-center gap-4">
-                    <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/20">
-                        View More
+                    <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/20">
+                        <Link href="/about">View More</Link>
                     </Button>
                     <Button variant="ghost" className="rounded-full text-foreground hover:text-primary">
                         Download CV

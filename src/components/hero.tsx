@@ -1,10 +1,11 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { MoveRight } from 'lucide-react';
+import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section id="home" className="w-full min-h-screen flex items-center">
+    <section id="home" className="w-full min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-24 items-center">
           <div className="flex flex-col justify-center space-y-4 animate-in fade-in slide-in-from-left-12 duration-1000">
@@ -14,15 +15,15 @@ export function Hero() {
                 Hey <br/> I'm <span className="text-primary">Fahmi</span>, <br/> Full-Stack Developer
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl font-body">
-                Let's Talk!
+                I build beautiful and functional websites.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Button size="lg" asChild className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 group">
-                <a href="#contact">
+                <Link href="/#contact">
                   Let's Talk
                   <MoveRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

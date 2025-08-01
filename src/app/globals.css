@@ -9,8 +9,8 @@ html {
 body {
   font-family: var(--font-body), sans-serif;
   background-color: hsl(var(--background));
-  background-image: url('/background-pattern.svg');
-  background-size: cover;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-matter.png");
+  background-size: auto;
   background-position: center;
   background-attachment: fixed;
 }
@@ -26,47 +26,48 @@ h6 {
 
 @layer base {
   :root {
-    --background: 224 24% 12%;
+    --background: 222 84% 4.9%; /* Deep indigo */
     --foreground: 210 40% 98%;
-    --card: 224 24% 16%;
+    --card: 222 84% 6%;
     --card-foreground: 210 40% 98%;
-    --popover: 224 24% 12%;
+    --popover: 222 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 172 92% 52%;
-    --primary-foreground: 224 24% 12%;
-    --secondary: 224 24% 20%;
+    --primary: 173 95% 46%; /* Vibrant Teal */
+    --primary-foreground: 222 84% 4.9%;
+    --secondary: 217 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 224 24% 20%;
-    --muted-foreground: 210 40% 60%;
-    --accent: 172 92% 52%;
-    --accent-foreground: 224 24% 12%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 333 95% 68%; /* Vibrant Magenta */
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 224 24% 25%;
-    --input: 224 24% 25%;
-    --ring: 172 92% 52%;
-    --radius: 0.5rem;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 173 95% 46%;
+    --radius: 0.8rem;
   }
+
   .dark {
-    --background: 224 24% 12%;
+    --background: 222 84% 4.9%; /* Deep indigo */
     --foreground: 210 40% 98%;
-    --card: 224 24% 16%;
+    --card: 222 84% 6%;
     --card-foreground: 210 40% 98%;
-    --popover: 224 24% 12%;
+    --popover: 222 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 172 92% 52%;
-    --primary-foreground: 224 24% 12%;
-    --secondary: 224 24% 20%;
+    --primary: 173 95% 46%; /* Vibrant Teal */
+    --primary-foreground: 222 84% 4.9%;
+    --secondary: 217 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 224 24% 20%;
-    --muted-foreground: 210 40% 60%;
-    --accent: 172 92% 52%;
-    --accent-foreground: 224 24% 12%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 333 95% 68%; /* Vibrant Magenta */
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 224 24% 25%;
-    --input: 224 24% 25%;
-    --ring: 172 92% 52%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 173 95% 46%;
   }
 }
 
