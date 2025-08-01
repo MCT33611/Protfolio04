@@ -6,7 +6,7 @@ import Link from 'next/link';
 export function Hero() {
   return (
     <section id="home" className="w-full min-h-screen flex items-center justify-center">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 lg:pl-24">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-24 items-center">
           <div className="flex flex-col justify-center space-y-4 animate-in fade-in slide-in-from-left-12 duration-1000">
             <div className="space-y-4">

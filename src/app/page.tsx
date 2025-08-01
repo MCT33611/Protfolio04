@@ -7,7 +7,7 @@ import { Contact } from "@/components/contact";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-grow lg:pl-24">
+      <main className="flex-grow">
         <Hero />
         <About />
         <Skills />

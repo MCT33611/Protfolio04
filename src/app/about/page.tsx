@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen text-foreground animate-in fade-in duration-1000 lg:pl-24">
+    <div className="min-h-screen text-foreground animate-in fade-in duration-1000">
       <section 
         className="w-full py-20 md:py-32 lg:py-40"
         style={{
@@ -13,7 +13,7 @@ export default function AboutPage() {
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 lg:pl-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-in fade-in slide-in-from-left-12 duration-1000 relative">
                <div className="relative w-full max-w-md mx-auto">
@@ -49,7 +49,7 @@ export default function AboutPage() {
       </section>
       
       <section className="py-12 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 lg:pl-24">
             <h2 className="text-3xl font-bold text-center mb-12 font-headline text-primary">Skills Summary</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div className="flex flex-col items-center space-y-2">
