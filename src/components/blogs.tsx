@@ -2,39 +2,31 @@
 "use client"
 
 import Image from 'next/image';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MoveLeft, MoveRight } from 'lucide-react';
 
-const projectsData = [
+const blogsData = [
   {
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce site with a modern UI, product management, and a secure checkout process.",
-    details: "Built with Next.js, TypeScript, and Stripe for payments. The backend is a custom Node.js API with a PostgreSQL database. Deployed on Vercel.",
-    tags: ["Next.js", "React", "Stripe", "Tailwind CSS"],
+    title: "What does it take to become a web developer?",
+    description: "Explore the journey of becoming a web developer, from learning the basics to landing your first job. This post covers essential skills, resources, and tips for aspiring developers.",
     imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "online shopping",
+    imageHint: "coding on laptop",
     liveUrl: "#",
   },
   {
-    title: "Portfolio Website Builder",
-    description: "A SaaS application that allows creatives to build and deploy their own portfolio websites without writing code.",
-    details: "Leveraged server-side rendering for SEO and performance. Included a drag-and-drop interface and multiple templates.",
-    tags: ["React", "SaaS", "Firebase", "Node.js"],
+    title: "My Favorite UI/UX Design Trends for 2024",
+    description: "A look into the most exciting UI/UX design trends that are shaping the digital landscape in 2024. From brutalism to glassmorphism, we cover it all.",
     imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "website builder",
+    imageHint: "design trends",
     liveUrl: "#",
   },
-  {
-    title: "Data Visualization Dashboard",
-    description: "An analytics dashboard for a marketing firm, displaying complex data through interactive charts and graphs.",
-    details: "Used D3.js and Recharts to create dynamic and responsive visualizations. Data is fetched in real-time from a GraphQL API.",
-    tags: ["Data Viz", "D3.js", "GraphQL", "React"],
+    {
+    title: "A Deep Dive into React Server Components",
+    description: "Understand the power of React Server Components and how they are changing the way we build modern web applications with frameworks like Next.js.",
     imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "data dashboard",
+    imageHint: "react code",
     liveUrl: "#",
   },
 ];
@@ -58,20 +50,20 @@ export function Blogs() {
         </div>
         <div className="relative mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {projectsData.slice(0, 2).map((project, index) => (
+                {blogsData.slice(0, 2).map((blog, index) => (
                 <Card key={index} className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group">
                     <Image
-                        src={project.imageUrl}
-                        alt={project.title}
+                        src={blog.imageUrl}
+                        alt={blog.title}
                         width={600}
                         height={400}
-                        data-ai-hint={project.imageHint}
+                        data-ai-hint={blog.imageHint}
                         className="rounded-t-2xl object-cover w-full h-60 transition-transform duration-300 group-hover:scale-105"
                     />
                     <CardContent className="p-6">
-                        <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
-                        <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary font-semibold hover:underline">
+                        <h3 className="text-xl font-bold font-headline mb-2">{blog.title}</h3>
+                        <p className="text-muted-foreground mb-4 line-clamp-2">{blog.description}</p>
+                        <a href={blog.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary font-semibold hover:underline">
                             Read More <ExternalLink className="w-4 h-4 ml-2" />
                         </a>
                     </CardContent>

@@ -25,7 +25,7 @@ const experienceData = [
   }
 ];
 
-export function Experience() {
+export function About() {
   return (
     <section id="experience" className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20">
       <div className="container mx-auto px-4 md:px-6">
