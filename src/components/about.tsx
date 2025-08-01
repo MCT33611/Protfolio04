@@ -1,11 +1,20 @@
 import Image from 'next/image';
 import { Button } from './ui/button';
-import { Code } from 'lucide-react';
 
 export function About() {
   return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20">
-      <div className="container mx-auto px-4 md:px-6">
+    <section 
+      id="about" 
+      className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20"
+      style={{
+        backgroundColor: '#1A1E23',
+        backgroundImage: `url("/background-pattern.svg")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="container mx-auto px-4 md:px-6 bg-background/80 backdrop-blur-sm py-12 rounded-2xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-in fade-in slide-in-from-left-12 duration-1000 relative">
                <div className="relative w-full max-w-md mx-auto">
@@ -28,7 +37,7 @@ export function About() {
                         </div>
                     </div>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">About Me</h2>
-                    <h3 className="text-2xl font-semibold">Hello!</h3>
+                    <h3 className="text-2xl font-semibold text-foreground">Hello!</h3>
                     <p className="max-w-[600px] text-muted-foreground md:text-lg">
                     I'm a passionate Full-Stack Developer with a love for creating beautiful and functional web experiences. I thrive on solving complex problems and turning ideas into reality. My journey in tech has been driven by a constant curiosity and a desire to learn and grow.
                     </p>
@@ -40,7 +49,7 @@ export function About() {
                     <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/20">
                         View More
                     </Button>
-                    <Button variant="ghost" className="rounded-full">
+                    <Button variant="ghost" className="rounded-full text-foreground hover:text-primary">
                         Download CV
                     </Button>
                 </div>
