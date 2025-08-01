@@ -50,18 +50,18 @@ function Card() {
         <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-3xl p-6 w-80 shadow-2xl relative z-10">
             <div className="flex items-center space-x-4 mb-4">
                 <div className="relative">
-                    <Image src="https://placehold.co/80x80.png" alt="Fahmi" data-ai-hint="man portrait" width={80} height={80} className="rounded-full border-2 border-primary"/>
+                    <Image src="/profile.jpeg" alt="Fahmi" data-ai-hint="man portrait" width={80} height={80} className="rounded-full border-2 border-primary aspect-square object-cover "/>
                     <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-card"></div>
                 </div>
                 <div>
-                    <h3 className="font-bold text-lg">Fahmi</h3>
+                    <h3 className="font-bold text-lg">Muhammed Fahmi</h3>
                     <p className="text-sm text-muted-foreground">Full-Stack Developer</p>
                 </div>
             </div>
             <div className="space-y-2 text-sm">
-                <p><span className="font-semibold">EMAIL:</span> name@example.com</p>
-                <p><span className="font-semibold">PHONE:</span> +1234567890</p>
-                <p><span className="font-semibold">LOCATION:</span> Earth</p>
+                <p><span className="font-semibold">EMAIL:</span> muhammedfahmi04@gmail.com</p>
+                <p><span className="font-semibold">PHONE:</span> +91 8089342685</p>
+                <p><span className="font-semibold">LOCATION:</span> India, Kerala</p>
             </div>
             <Button className="w-full mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90">Download CV</Button>
         </div>

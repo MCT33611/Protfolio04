@@ -51,13 +51,13 @@ export function Skills() {
       id="skills" 
       className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20 relative"
       style={{
-        backgroundImage: `url("https://www.transparenttextures.com/patterns/codepen.png")`,
+        backgroundImage: `url("/skills-bg.png")`,
         backgroundSize: 'auto',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="absolute inset-0 bg-background/95 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
       <div className="container mx-auto px-4 md:px-6 relative lg:pl-24">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">

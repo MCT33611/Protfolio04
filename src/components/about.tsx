@@ -9,7 +9,7 @@ export function About() {
       className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20"
       style={{
         backgroundColor: '#1A1E23',
-        backgroundImage: `url("https://www.transparenttextures.com/patterns/cubes.png")`,
+        backgroundImage: `url("/about-me-bg.png")`,
         backgroundSize: 'auto',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -21,7 +21,7 @@ export function About() {
                <div className="relative w-full max-w-md mx-auto">
                     <div className="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-2xl transform -rotate-3"></div>
                     <Image
-                    src="https://placehold.co/600x750.png"
+                    src="/profile.jpeg"
                     alt="About Me"
                     width={600}
                     height={750}
