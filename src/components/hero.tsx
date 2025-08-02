@@ -44,8 +44,8 @@ export function Hero() {
                 <Card />
             </div>
              <div className="hidden lg:flex flex-col space-y-8 ml-12">
-                <Stat value="04" label="Years Experience" />
-                <Stat value="06" label="Happy Clients" />
+                <Stat value="02" label="Years Experience" />
+                <Stat value="03" label="Happy Clients" />
                 <Stat value="08" label="Projects Done" />
              </div>
           </div>
