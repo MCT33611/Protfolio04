@@ -25,8 +25,8 @@ export function Header() {
   ];
   
   const socialLinks = [
-    { name: 'GitHub', Icon: Github, url: '#' },
-    { name: 'LinkedIn', Icon: Linkedin, url: '#' },
+    { name: 'GitHub', Icon: Github, url: 'https://github.com/MCT33611' },
+    { name: 'LinkedIn', Icon: Linkedin, url: 'https://www.linkedin.com/in/muhammed-fahmi-p/' },
   ];
   
   const NavContent = () => (
@@ -84,7 +84,7 @@ export function Header() {
             {navLinks.map(link => {
                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
                return (
-                <Button key={link.href} variant="ghost" size="icon" asChild className={cn("rounded-full", isActive && "bg-primary/20 text-primary")}>
+                <Button key={link.href} variant="ghost" size="icon" asChild className={cn("rounded-full transition-all duration-300 ease-in-out hover:text-primary hover:bg-primary/10 hover:shadow-md hover:scale-105", isActive && "bg-primary/20 text-primary")}>
                     <Link href={link.href}>
                         <link.Icon />
                     </Link>

@@ -1,9 +1,19 @@
+
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { MoveRight } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
+  const downloadCV = () =>
+    window.open(
+      "https://drive.google.com/file/d/1t9uzMIeqfnhmts-WtI5l2BQPwbGFqfWZ/view?usp=sharing",
+      "_blank",
+      "noopener,noreferrer"
+    );
+
   return (
     <section id="home" className="w-full min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-4 md:px-6 lg:pl-24">
@@ -46,6 +56,13 @@ export function Hero() {
 }
 
 function Card() {
+    const downloadCV = () =>
+    window.open(
+      "https://drive.google.com/file/d/1t9uzMIeqfnhmts-WtI5l2BQPwbGFqfWZ/view?usp=sharing",
+      "_blank",
+      "noopener,noreferrer"
+    );
+
     return (
         <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-3xl p-6 w-80 shadow-2xl relative z-10">
             <div className="flex items-center space-x-4 mb-4">
@@ -63,7 +80,7 @@ function Card() {
                 <p><span className="font-semibold">PHONE:</span> +91 8089342685</p>
                 <p><span className="font-semibold">LOCATION:</span> India, Kerala</p>
             </div>
-            <Button className="w-full mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90">Download CV</Button>
+            <Button className="w-full mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90" onClick={downloadCV}>Download CV</Button>
         </div>
     )
 }
