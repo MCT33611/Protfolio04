@@ -85,10 +85,10 @@ export function Services() {
               </div>
             </div>
              <div className="max-w-4xl mx-auto mb-12">
-                <Alert variant="destructive" className="bg-destructive/10 border-destructive/30 text-destructive-foreground">
-                  <AlertTriangle className="h-4 w-4 !text-destructive" />
-                  <AlertTitle className="font-headline text-destructive">Part-Time Availability Notice</AlertTitle>
-                  <AlertDescription className="text-destructive/80">
+                <Alert className="bg-primary/10 border-primary/30 text-primary-foreground">
+                  <AlertTriangle className="h-4 w-4 !text-primary" />
+                  <AlertTitle className="font-headline text-primary">Part-Time Availability Notice</AlertTitle>
+                  <AlertDescription className="text-primary/80">
                     As a full-time developer at IBS Fulcro, Mumbai, I provide these services as part-time side hustles. I primarily work on these projects during weekends (Saturday & Sunday) and my free time at night. I enjoy this work and like to take the time to build things right. The prices or fees mentioned are rough market estimates and are always negotiable in my case.
                   </AlertDescription>
                 </Alert>
