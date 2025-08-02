@@ -2,25 +2,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Code, Brush, Database, Server, Component, Settings, BrainCircuit, Sheet, Network, GitBranch, HardDrive, Bot } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { getGithubLanguageData } from '@/lib/github';
 
 type Skill = {
   name: string;
   level: number;
 };
 
-const skillsData: { category: string, Icon: LucideIcon, skills: Skill[] }[] = [
-  {
-    category: "Web Development",
-    Icon: Code,
-    skills: [
-      { name: "HTML", level: 95 },
-      { name: "CSS", level: 90 },
-      { name: "JavaScript", level: 85 },
-      { name: "React", level: 80 },
-      { name: "Angular", level: 75 },
-      { name: "TypeScript", level: 75 },
-    ]
-  },
+// This data is now partially dynamic from GitHub
+const staticSkillsData: { category: string, Icon: LucideIcon, skills: Skill[] }[] = [
   {
     category: "Backend & Databases",
     Icon: Database,
@@ -73,7 +63,25 @@ const otherSkills = [
   { name: "AI Tools", Icon: Bot },
 ];
 
-export function Skills() {
+export async function Skills() {
+
+  const githubSkills = await getGithubLanguageData();
+
+  const webDevSkills = {
+    category: "Web Development",
+    Icon: Code,
+    skills: githubSkills || [
+        { name: "HTML", level: 95 },
+        { name: "CSS", level: 90 },
+        { name: "JavaScript", level: 85 },
+        { name: "React", level: 80 },
+        { name: "Angular", level: 75 },
+        { name: "TypeScript", level: 75 },
+    ]
+  }
+
+  const skillsData = [webDevSkills, ...staticSkillsData];
+
   return (
     <section 
       id="skills" 
