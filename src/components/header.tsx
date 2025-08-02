@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Home, User, Lightbulb, Briefcase, Mail, Github, Linkedin } from 'lucide-react';
+import { Home, User, Lightbulb, Briefcase, Mail, Github, Linkedin, Settings } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
@@ -15,6 +15,7 @@ export function Header() {
   const navLinks = [
     { href: '/', label: 'Home', Icon: Home, id: 'home' },
     { href: '/#about', label: 'About', Icon: User, id: 'about' },
+    { href: '/#services', label: 'Services', Icon: Settings, id: 'services' },
     { href: '/#skills', label: 'Skills', Icon: Lightbulb, id: 'skills' },
     { href: '/#projects', label: 'Projects', Icon: Briefcase, id: 'projects' },
     { href: '/#contact', label: 'Contact', Icon: Mail, id: 'contact' },
