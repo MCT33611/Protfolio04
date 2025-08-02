@@ -1,10 +1,11 @@
 
 "use client"
 
+import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Github, ExternalLink, PlusCircle, View } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -67,6 +68,76 @@ const projectsData = [
   }
 ];
 
+function ProjectCard({ project }: { project: typeof projectsData[0] }) {
+    const [isLive, setIsLive] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    return (
+         <div className="p-1 h-full">
+            <Dialog>
+                <DialogTrigger asChild>
+                    <Card className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group h-full flex flex-col relative cursor-pointer">
+                        <ProjectPreview 
+                            liveUrl={project.liveUrl}
+                            imageUrl={project.imageUrl}
+                            imageHint={project.imageHint}
+                            title={project.title}
+                            isLive={isLive}
+                            setIsLive={setIsLive}
+                            isLoading={isLoading}
+                            setIsLoading={setIsLoading}
+                        />
+                        <CardContent className="p-6 flex flex-col flex-grow">
+                            <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
+                            <div className="flex flex-wrap gap-2 mb-4 overflow-hidden h-7">
+                                {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                            </div>
+                            <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
+                            <div className="flex items-center flex-wrap gap-4 mt-auto pt-4">
+                                <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary/20" onClick={(e) => e.stopPropagation()}>
+                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                        <Github className="mr-2 h-4 w-4" /> GitHub
+                                    </a>
+                                </Button>
+                                <Button asChild variant="default" size="sm" className="rounded-full" onClick={(e) => e.stopPropagation()}>
+                                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                        <ExternalLink className="mr-2 h-4 w-4" />
+                                        {isLoading ? 'Checking...' : isLive ? 'Live' : 'Not live for now'}
+                                    </a>
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-lg border-primary/30 text-foreground">
+                    <DialogHeader>
+                    <DialogTitle className="text-2xl font-headline text-primary">{project.title}</DialogTitle>
+                        <div className="flex flex-wrap gap-2 py-2">
+                        {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                    </div>
+                    <DialogDescription className="pt-4 text-base text-muted-foreground">
+                        {project.description}
+                    </DialogDescription>
+                    </DialogHeader>
+                    <div className="flex items-center gap-4 mt-4">
+                        <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/20">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Github className="mr-2 h-4 w-4" /> GitHub
+                            </a>
+                        </Button>
+                        <Button asChild variant="default" className="rounded-full">
+                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="mr-2 h-4 w-4" />
+                                {isLoading ? 'Checking...' : isLive ? 'Live' : 'Not live for now'}
+                            </a>
+                        </Button>
+                    </div>
+                </DialogContent>
+            </Dialog>
+        </div>
+    )
+}
+
 export function Projects() {
   return (
     <section id="projects" className="w-full py-12 md:py-24 lg:py-32 scroll-mt-20">
@@ -96,63 +167,7 @@ export function Projects() {
                 <CarouselContent>
                     {projectsData.map((project, index) => (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                        <div className="p-1 h-full">
-                        <Dialog>
-                            <DialogTrigger asChild>
-                                <Card className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group h-full flex flex-col relative cursor-pointer">
-                                    <ProjectPreview 
-                                        liveUrl={project.liveUrl}
-                                        imageUrl={project.imageUrl}
-                                        imageHint={project.imageHint}
-                                        title={project.title}
-                                    />
-                                    <CardContent className="p-6 flex flex-col flex-grow">
-                                        <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
-                                        <div className="flex flex-wrap gap-2 mb-4 overflow-hidden h-7">
-                                            {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                                        </div>
-                                        <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
-                                        <div className="flex items-center flex-wrap gap-4 mt-auto pt-4">
-                                            <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary/20" onClick={(e) => e.stopPropagation()}>
-                                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                                    <Github className="mr-2 h-4 w-4" /> GitHub
-                                                </a>
-                                            </Button>
-                                            <Button asChild variant="default" size="sm" className="rounded-full" onClick={(e) => e.stopPropagation()}>
-                                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                                    <ExternalLink className="mr-2 h-4 w-4" /> Live
-                                                </a>
-                                            </Button>
-
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </DialogTrigger>
-                            <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-lg border-primary/30 text-foreground">
-                                <DialogHeader>
-                                <DialogTitle className="text-2xl font-headline text-primary">{project.title}</DialogTitle>
-                                    <div className="flex flex-wrap gap-2 py-2">
-                                    {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                                </div>
-                                <DialogDescription className="pt-4 text-base text-muted-foreground">
-                                    {project.description}
-                                </DialogDescription>
-                                </DialogHeader>
-                                <div className="flex items-center gap-4 mt-4">
-                                    <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/20">
-                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                            <Github className="mr-2 h-4 w-4" /> GitHub
-                                        </a>
-                                    </Button>
-                                    <Button asChild variant="default" className="rounded-full">
-                                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                            <ExternalLink className="mr-2 h-4 w-4" /> Live
-                                        </a>
-                                    </Button>
-                                </div>
-                            </DialogContent>
-                        </Dialog>
-                        </div>
+                       <ProjectCard project={project} />
                     </CarouselItem>
                     ))}
                 </CarouselContent>

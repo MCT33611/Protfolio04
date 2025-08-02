@@ -9,12 +9,13 @@ interface ProjectPreviewProps {
   imageUrl: string;
   imageHint: string;
   title: string;
+  isLive: boolean;
+  setIsLive: (isLive: boolean) => void;
+  isLoading: boolean;
+  setIsLoading: (isLoading: boolean) => void;
 }
 
-export function ProjectPreview({ liveUrl, imageUrl, imageHint, title }: ProjectPreviewProps) {
-  const [isLive, setIsLive] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
+export function ProjectPreview({ liveUrl, imageUrl, imageHint, title, isLive, setIsLive, isLoading, setIsLoading }: ProjectPreviewProps) {
   useEffect(() => {
     const checkUrl = async () => {
       if (!liveUrl) {
@@ -22,13 +23,11 @@ export function ProjectPreview({ liveUrl, imageUrl, imageHint, title }: ProjectP
         return;
       }
       try {
-        // We use 'no-cors' mode to avoid CORS errors, as we only need to know if the request succeeds, not read the response.
-        // This is a simple check and might not be 100% accurate for all server configurations.
         const response = await fetch(liveUrl, { mode: 'no-cors' });
-        // 'no-cors' requests always have a status of 0, so we check the type of response.
-        // 'opaque' means the request was successful but we can't access the content.
         if (response.type === 'opaque' || response.ok) {
           setIsLive(true);
+        } else {
+          setIsLive(false);
         }
       } catch (error) {
         console.error(`Error checking URL ${liveUrl}:`, error);
@@ -39,7 +38,7 @@ export function ProjectPreview({ liveUrl, imageUrl, imageHint, title }: ProjectP
     };
 
     checkUrl();
-  }, [liveUrl]);
+  }, [liveUrl, setIsLoading, setIsLive]);
 
   if (isLoading) {
     return (
