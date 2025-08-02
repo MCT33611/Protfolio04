@@ -4,8 +4,16 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, PlusCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import {
   Carousel,
   CarouselContent,
@@ -88,8 +96,8 @@ export function Projects() {
                 <CarouselContent>
                     {projectsData.map((project, index) => (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                        <div className="p-1">
-                        <Card className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group h-full flex flex-col">
+                        <div className="p-1 h-full">
+                        <Card className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group h-full flex flex-col relative">
                             <ProjectPreview 
                                 liveUrl={project.liveUrl}
                                 imageUrl={project.imageUrl}
@@ -98,7 +106,7 @@ export function Projects() {
                             />
                             <CardContent className="p-6 flex flex-col flex-grow">
                                 <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-2 mb-4 overflow-hidden h-7">
                                     {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                                 </div>
                                 <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
@@ -114,6 +122,37 @@ export function Projects() {
                                         </a>
                                     </Button>
                                 </div>
+
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Button variant="ghost" size="icon" className="absolute top-4 right-4 rounded-full bg-card/70 hover:bg-card/90 text-foreground">
+                                            <PlusCircle className="h-6 w-6" />
+                                        </Button>
+                                    </DialogTrigger>
+                                    <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-lg border-primary/30 text-foreground">
+                                        <DialogHeader>
+                                        <DialogTitle className="text-2xl font-headline text-primary">{project.title}</DialogTitle>
+                                         <div className="flex flex-wrap gap-2 py-2">
+                                            {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                                        </div>
+                                        <DialogDescription className="pt-4 text-base text-muted-foreground">
+                                            {project.description}
+                                        </DialogDescription>
+                                        </DialogHeader>
+                                        <div className="flex items-center gap-4 mt-4">
+                                            <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/20">
+                                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                                    <Github className="mr-2 h-4 w-4" /> GitHub
+                                                </a>
+                                            </Button>
+                                            <Button asChild variant="default" className="rounded-full">
+                                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                                    <ExternalLink className="mr-2 h-4 w-4" /> Live
+                                                </a>
+                                            </Button>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                             </CardContent>
                         </Card>
                         </div>
