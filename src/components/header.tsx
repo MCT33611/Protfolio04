@@ -48,7 +48,7 @@ export function Header() {
               asChild
               className={cn(
                 "relative group rounded-full transition-all duration-300 ease-in-out",
-                "text-muted-foreground hover:text-primary",
+                "text-muted-foreground hover:text-primary hover:bg-primary/20",
                 isMobile 
                   ? "h-12 w-12" 
                   : "w-full justify-start gap-4 lg:w-12 lg:h-12 lg:justify-center",
