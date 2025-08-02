@@ -8,30 +8,48 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Send, MoveRight } from "lucide-react";
+import { sendEmail } from "@/ai/flows/send-email-flow";
+import { useState } from "react";
+import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
 export function Contact() {
   const { toast } = useToast();
+  const [isSending, setIsSending] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
+      message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent! 🚀",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSending(true);
+    try {
+      await sendEmail(values);
+      toast({
+        title: "Message Sent! 🚀",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Failed to send email", error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem sending your message. Please try again.",
+      });
+    } finally {
+      setIsSending(false);
+    }
   }
   
   return (
@@ -52,35 +70,49 @@ export function Contact() {
         </div>
         <div className="max-w-3xl mx-auto">
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
-                    <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                              <FormItem>
+                                  <FormControl>
+                                      <Input placeholder="Your Name" {...field} className="bg-transparent border-t-0 border-x-0 border-b-2 border-primary/20 rounded-none focus:border-primary transition-all duration-300 h-12 px-2"/>
+                                  </FormControl>
+                                  <FormMessage />
+                              </FormItem>
+                          )}
+                      />
+                      <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
                             <FormItem>
-                                <FormControl>
-                                    <Input placeholder="Your Name" {...field} className="bg-transparent border-t-0 border-x-0 border-b-2 border-primary/20 rounded-none focus:border-primary transition-all duration-300 h-12 px-2"/>
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                           <FormItem>
-                                <FormControl>
-                                    <Input placeholder="Your Email" {...field} className="bg-transparent border-t-0 border-x-0 border-b-2 border-primary/20 rounded-none focus:border-primary transition-all duration-300 h-12 px-2"/>
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <div className="md:col-span-2 flex justify-center mt-8">
-                         <Button type="submit" size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 group">
-                            Send Message
-                            <MoveRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                  <FormControl>
+                                      <Input placeholder="Your Email" {...field} className="bg-transparent border-t-0 border-x-0 border-b-2 border-primary/20 rounded-none focus:border-primary transition-all duration-300 h-12 px-2"/>
+                                  </FormControl>
+                                  <FormMessage />
+                              </FormItem>
+                          )}
+                      />
+                    </div>
+                     <FormField
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
+                            <FormItem>
+                                  <FormControl>
+                                      <Textarea placeholder="Your Message" {...field} className="bg-transparent border-t-0 border-x-0 border-b-2 border-primary/20 rounded-none focus:border-primary transition-all duration-300 min-h-[100px] px-2"/>
+                                  </FormControl>
+                                  <FormMessage />
+                              </FormItem>
+                          )}
+                      />
+                    <div className="flex justify-center pt-8">
+                         <Button type="submit" size="lg" disabled={isSending} className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 group">
+                            {isSending ? "Sending..." : "Send Message"}
+                            {!isSending && <MoveRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
                         </Button>
                     </div>
                 </form>
