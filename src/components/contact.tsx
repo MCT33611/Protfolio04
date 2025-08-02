@@ -8,7 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Send, MoveRight } from "lucide-react";
-import { sendEmail } from "@/ai/flows/send-email-flow";
+import { sendEmail, type SendEmailInput } from "@/ai/flows/send-email-flow";
 import { useState } from "react";
 import { Textarea } from "./ui/textarea";
 
@@ -22,7 +22,7 @@ export function Contact() {
   const { toast } = useToast();
   const [isSending, setIsSending] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<SendEmailInput>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -31,7 +31,7 @@ export function Contact() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: SendEmailInput) {
     setIsSending(true);
     try {
       await sendEmail(values);
