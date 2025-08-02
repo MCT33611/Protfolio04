@@ -1,3 +1,4 @@
+
 "use client"
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -26,7 +27,6 @@ export function Header() {
   const socialLinks = [
     { name: 'GitHub', Icon: Github, url: '#' },
     { name: 'LinkedIn', Icon: Linkedin, url: '#' },
-    { name: 'Twitter', Icon: Twitter, url: '#' },
   ];
   
   const NavContent = () => (
@@ -59,7 +59,7 @@ export function Header() {
       <div className="flex-grow" />
       <div className="flex-col items-center gap-2 mb-4 hidden lg:flex">
           {socialLinks.map(({ name, Icon, url }) => (
-            <Button key={name} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary rounded-full transition-colors">
+            <Button key={name} variant="ghost" size="icon" asChild className="text-muted-foreground rounded-full transition-all duration-300 ease-in-out hover:text-primary hover:bg-primary/10 hover:shadow-md hover:scale-105">
               <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
                 <Icon className="h-5 w-5" />
               </a>
