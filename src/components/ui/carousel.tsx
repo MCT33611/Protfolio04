@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -198,14 +199,17 @@ const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  const { scrollPrev, canScrollPrev } = useCarousel()
 
   return (
     <Button
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("h-8 w-8 rounded-full", className)}
+      className={cn(
+        "h-8 w-8 rounded-full text-foreground transition-all duration-300 ease-in-out hover:text-primary hover:bg-primary/10 hover:shadow-md hover:scale-105",
+        className
+      )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
@@ -221,14 +225,17 @@ const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
+  const { scrollNext, canScrollNext } = useCarousel()
 
   return (
     <Button
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("h-8 w-8 rounded-full", className)}
+      className={cn(
+        "h-8 w-8 rounded-full text-foreground transition-all duration-300 ease-in-out hover:text-primary hover:bg-primary/10 hover:shadow-md hover:scale-105",
+        className
+      )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
