@@ -47,41 +47,27 @@ const otherSkills = [
   { 
     name: "VS Code", 
     Icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
-        <path d="M16.5 21.5l-8-8 8-8M8.5 3.5l8 8-8 8"/>
-        <path d="M3 12h1"/>
-        <path d="M21 12h-1"/>
-      </svg>
+      <img src="/icons8-visual-studio-code.svg" width="24" height="24" className="w-8 h-8 text-primary mb-2"></img>
     )
   },
   { 
     name: "Visual Studio", 
     Icon: () => (
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
-        <path d="M22 8.5l-3 3-3-3-3 3-3-3-3 3-3-3-2.5 2.5v11l2.5 2.5 3-3 3 3 3-3 3 3 3-3 3 3 2.5-2.5v-11z"/>
-        <path d="M2 12l7-7 3.5 3.5-7 7z"/>
-       </svg>
+       <img src="/icons8-visual-studio.svg" width="24" height="24" className="w-8 h-8 text-primary mb-2"></img>
     ) 
   },
   { name: "MSSQL", Icon: Database },
   { 
     name: "WinSCP", 
     Icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <path d="M9.5 16.5l2.5-3 2.5 3"/>
-        <path d="M12 10.5v6"/>
-      </svg>
+      <img src="/icons8-ftp-48.png" width="24" height="24" className="w-8 h-8 text-primary mb-2"></img>
     ) 
   },
   { name: "S3 Browser", Icon: HardDrive },
   { 
     name: "Postman", 
     Icon: () => (
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary mb-2">
-          <path d="M12.65,3.14,10.79,5.29,14.24,9,12,11.5,9.76,9,13.21,5.29,11.35,3.14,3,12.5,11.35,21.86l1.86-2.15L9.76,16,12,13.5l2.24,2.54,3.45-3.81,1.86,2.15L21,12.5Z"/>
-       </svg>
+       <img src="/postman-logo-icon-orange.svg" width="24" height="24" className="w-8 h-8 text-primary mb-2"></img>
     )
   },
   { name: "AI Tools", Icon: Bot },
