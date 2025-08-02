@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -50,12 +51,17 @@ export function ProjectPreview({ liveUrl, imageUrl, imageHint, title }: ProjectP
 
   if (isLive) {
     return (
-      <iframe
-        src={liveUrl}
-        title={title}
-        className="rounded-t-2xl object-cover w-full h-60 border-0"
-        sandbox="allow-scripts allow-same-origin"
-      />
+      <div className="relative w-full h-60 overflow-hidden rounded-t-2xl">
+        <iframe
+          src={liveUrl}
+          title={title}
+          className="rounded-t-2xl object-cover w-full h-full border-0"
+          sandbox="allow-scripts allow-same-origin"
+          style={{ transform: 'scale(1)', transformOrigin: '0 0', pointerEvents: 'none' }}
+          scrolling="no"
+        />
+         <div className="absolute inset-0"></div>
+      </div>
     );
   }
 
