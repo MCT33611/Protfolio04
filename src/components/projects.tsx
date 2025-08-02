@@ -123,8 +123,8 @@ export function Projects() {
                                             </a>
                                         </Button>
                                         <DialogTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="rounded-full">
-                                                <View className="mr-2 h-4 w-4" /> View Details
+                                            <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 ml-auto">
+                                                <PlusCircle className="h-4 w-4" />
                                             </Button>
                                         </DialogTrigger>
                                     </div>
