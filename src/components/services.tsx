@@ -10,57 +10,199 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 const servicesData = [
   {
-    icon: FileCode,
+    icons: [
+      () => (
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+          <path d="M16 2L3 7L5 24L16 30L27 24L29 7L16 2Z" fill="#DD0031" />
+          <path d="M16 2V30L27 24L29 7L16 2Z" fill="#C3002F" />
+          <path d="M15.9998 5.09375L7.87305 23.3638H10.9031L12.5368 19.2757H19.4348L21.0685 23.3638H24.0986L15.9998 5.09375ZM18.3736 16.7557H13.626L15.9998 11.0298L18.3736 16.7557Z" fill="white" />
+        </svg>
+      ),
+      () => (
+        <svg
+          viewBox="0 0 64 64"
+          xmlns="http://www.w3.org/2000/svg"
+           width="32" height="32"
+        >
+          <circle cx="32.001" cy="31.955" r="4.478" fill="#00d8ff" />
+          <path
+            d="M32.33,22.516c7.635,0.052 15.965,0.609 21.683,5.708c0.168,0.15 0.33,0.306 0.488,0.467c1.349,1.375 2.054,3.595 0.965,5.422
+             c-2.234,3.751 -7.23,5.387 -12.067,6.394c-7.234,1.506 -14.798,1.518 -22.029,0.192c-4.161,-0.764 -8.416,-2.103 -11.373,-4.904
+             c-1.151,-1.09 -2.135,-2.524 -1.981,-4.12c0.25,-2.582 2.727,-4.239 4.812,-5.361c5.791,-3.116 12.847,-3.813 19.502,-3.798Z"
+            fill="#00d8ff"
+          />
+          <path
+            d="M42.115,10.703c2.793,0.071 4.24,3.429 4.431,5.909c0.038,0.493 0.052,0.988 0.046,1.483c-0.006,0.536 -0.035,1.072 -0.082,1.606
+             c-0.589,6.612 -3.608,12.909 -7.163,18.724c-3.477,5.688 -7.717,11.36 -13.485,13.996c-1.907,0.872 -4.175,1.41 -5.863,0.437
+             c-2.314,-1.333 -2.567,-4.451 -2.524,-6.816c0.011,-0.581 0.049,-1.162 0.109,-1.741c0.889,-8.56 5.228,-16.669 10.658,-23.655
+             c3.168,-4.076 6.937,-8.119 11.632,-9.583c0.739,-0.231 1.326,-0.371 2.241,-0.36Z"
+            fill="#00d8ff"
+          />
+          <path
+            d="M22.109,10.747c3.564,0.069 6.765,2.488 9.607,5.197c5.186,4.943 9.011,11.231 11.913,17.849
+             c2.248,5.127 4.316,10.882 2.478,16.292c-0.579,1.705 -2.044,3.265 -3.997,3.305c-3.581,0.072 -6.9,-2.532 -9.78,-5.335
+             c-7.225,-7.034 -12.589,-16.32 -14.427,-26.168c-0.132,-0.704 -0.237,-1.414 -0.309,-2.127c-0.059,-0.582 -0.096,-1.167 -0.106,-1.752
+             c-0.008,-0.472 0.002,-0.944 0.035,-1.414c0.022,-0.314 0.054,-0.626 0.097,-0.937c0.041,-0.292 0.093,-0.583 0.158,-0.871
+             c0.043,-0.191 0.091,-0.38 0.146,-0.568c0.539,-1.843 1.941,-3.485 4.185,-3.471Z"
+            fill="#00d8ff"
+          />
+        </svg>
+      ),
+      () => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          fill="#000000"
+           width="32" height="32"
+        >
+          <g id="main">
+            <path d="M295.474,319.537c0.826,4.135,1.24,11.37,1.24,21.707v80.997h-22.327v-80.129
+      c0-9.097-0.868-15.894-2.604-20.404c-1.737-4.507-4.817-8.104-9.241-10.792c-4.424-2.683-9.613-4.031-15.567-4.031
+      c-9.51,0-17.717,3.019-24.622,9.055c-6.905,6.037-10.357,17.49-10.357,34.359v71.942h-22.327V290.512h20.094v18.73
+      c9.675-14.472,23.65-21.707,41.925-21.707c7.938,0,15.236,1.426,21.893,4.279c6.657,2.853,11.64,6.595,14.947,11.226
+      S294.15,313.17,295.474,319.537z M511.5,423.052c-6.284,1.323-11.908,1.984-16.869,1.984c-8.104,0-14.389-1.281-18.854-3.845
+      c-4.465-2.563-7.607-5.934-9.427-10.109c-1.819-4.172-2.729-12.962-2.729-26.358v-79.542h-48.475
+      c0.111,0.12,0.235,0.219,0.347,0.339c11.164,11.99,16.746,28.859,16.746,50.608c0,1.322-0.042,3.308-0.124,5.953h-98.239
+      c0.827,14.472,4.92,25.553,12.279,33.243c7.36,7.69,16.539,11.535,27.537,11.535c8.187,0,15.174-2.149,20.963-6.45
+      c5.788-4.3,10.378-11.163,13.769-20.59l23.071,2.853c-3.639,13.479-10.378,23.939-20.219,31.382s-22.41,11.164-37.708,11.164
+      c-19.268,0-34.545-5.934-45.832-17.8c-11.288-11.862-16.932-28.509-16.932-49.926c0-22.162,5.706-39.362,17.117-51.601
+      c11.412-12.238,26.214-18.357,44.406-18.357c2.199,0,4.354,0.095,6.454,0.281h84.839v-28.579h22.203v28.579h22.451v17.365h-22.451
+      v80.782c0,6.367,0.393,10.461,1.178,12.28c0.786,1.819,2.067,3.267,3.846,4.341c1.777,1.075,4.32,1.613,7.628,1.613
+      c2.481,0,5.747-0.29,9.8-0.869L511.5,423.052z M408.672,343.725c-0.993-11.081-3.805-19.392-8.435-24.932
+      c-7.112-8.601-16.332-12.9-27.661-12.9c-10.254,0-18.875,3.432-25.862,10.295c-6.987,6.864-10.854,16.043-11.598,27.537H408.672z
+      M157.881,395.42c-4.035,0-7.459,1.435-10.279,4.354c-2.82,2.898-4.217,6.405-4.217,10.548c0,4.035,1.397,7.529,4.217,10.473
+      c2.82,2.944,6.244,4.425,10.279,4.425c4.139,0,7.662-1.48,10.56-4.425c2.906-2.943,4.35-6.438,4.35-10.473
+      c0-4.044-1.443-7.55-4.35-10.489C165.542,396.875,162.02,395.42,157.881,395.42z M301.047,267.196
+      c-11.577,5.086-26.172,7.629-43.785,7.629c-30.928,0-52.345-5.954-64.253-17.862l5.604,14.913h-58.84l-9.101-30.018H66.737
+      l-8.865,30.018H0.5L68.846,89.883h61.292l45.653,121.494l50.461-3.161c1.158,8.683,3.514,15.3,7.07,19.847
+      c5.789,7.361,14.058,11.039,24.808,11.039c8.021,0,14.203-1.879,18.544-5.644c4.342-3.763,6.513-8.125,6.513-13.086
+      c0-4.714-2.067-8.932-6.202-12.652c-4.135-3.722-13.728-7.235-28.777-10.544c-24.642-5.538-42.214-12.899-52.716-22.078
+      c-10.585-9.18-15.877-20.88-15.877-35.104c0-9.344,2.708-18.172,8.125-26.482c5.416-8.311,13.562-14.841,24.436-19.598
+      c10.874-4.755,25.779-7.133,44.716-7.133c23.237,0,40.954,4.323,53.151,12.962c12.197,8.642,19.453,22.39,21.769,41.243
+      l-52.965,3.102c-1.405-8.187-4.362-14.141-8.869-17.862c-4.506-3.721-10.729-5.581-18.667-5.581
+      c-6.533,0-11.453,1.385-14.761,4.155c-3.308,2.771-4.961,6.14-4.961,10.108c0,2.896,1.364,5.502,4.093,7.814
+      c2.646,2.4,8.931,4.633,18.854,6.698c24.56,5.293,42.152,10.649,52.778,16.063c10.626,5.416,18.358,12.137,23.195,20.156
+      c2.479,4.109,4.312,8.472,5.521,13.079V89.883h93.401c20.342,0,35.578,4.837,45.708,14.512
+      c10.13,9.676,15.195,23.443,15.195,41.306c0,18.357-5.521,32.705-16.56,43.041c-11.04,10.339-27.889,15.505-50.546,15.505h-30.762
+      v67.478h-56.438v-44.868c-1.574,6.286-4.216,12.271-7.939,17.952C321.638,254.649,312.624,262.111,301.047,267.196z
+      M392.464,167.407h13.769c10.832,0,18.44-1.88,22.823-5.645c4.383-3.762,6.573-8.577,6.573-14.45
+      c0-5.706-1.901-10.543-5.705-14.513c-3.804-3.969-10.957-5.954-21.459-5.954h-16.001V167.407z M118.871,202.386l-20.07-65.368
+      l-19.863,65.368H118.871z" />
+          </g>
+        </svg>
+      )
+    ],
     title: "Full Stack Web Development",
     description: "Build powerful, scalable web applications using modern stacks like Angular or React with ASP.NET (Web API or MVC). Whether it's a service platform or e-commerce store, I deliver clean architecture, responsive designs, and seamless integrations from backend to frontend.",
   },
   {
-    icon: () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
-    ),
+    icons: [() => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        fill="#000000"
+         width="32" height="32"
+      >
+        <g id="main">
+          <path d="M295.474,319.537c0.826,4.135,1.24,11.37,1.24,21.707v80.997h-22.327v-80.129
+    c0-9.097-0.868-15.894-2.604-20.404c-1.737-4.507-4.817-8.104-9.241-10.792c-4.424-2.683-9.613-4.031-15.567-4.031
+    c-9.51,0-17.717,3.019-24.622,9.055c-6.905,6.037-10.357,17.49-10.357,34.359v71.942h-22.327V290.512h20.094v18.73
+    c9.675-14.472,23.65-21.707,41.925-21.707c7.938,0,15.236,1.426,21.893,4.279c6.657,2.853,11.64,6.595,14.947,11.226
+    S294.15,313.17,295.474,319.537z M511.5,423.052c-6.284,1.323-11.908,1.984-16.869,1.984c-8.104,0-14.389-1.281-18.854-3.845
+    c-4.465-2.563-7.607-5.934-9.427-10.109c-1.819-4.172-2.729-12.962-2.729-26.358v-79.542h-48.475
+    c0.111,0.12,0.235,0.219,0.347,0.339c11.164,11.99,16.746,28.859,16.746,50.608c0,1.322-0.042,3.308-0.124,5.953h-98.239
+    c0.827,14.472,4.92,25.553,12.279,33.243c7.36,7.69,16.539,11.535,27.537,11.535c8.187,0,15.174-2.149,20.963-6.45
+    c5.788-4.3,10.378-11.163,13.769-20.59l23.071,2.853c-3.639,13.479-10.378,23.939-20.219,31.382s-22.41,11.164-37.708,11.164
+    c-19.268,0-34.545-5.934-45.832-17.8c-11.288-11.862-16.932-28.509-16.932-49.926c0-22.162,5.706-39.362,17.117-51.601
+    c11.412-12.238,26.214-18.357,44.406-18.357c2.199,0,4.354,0.095,6.454,0.281h84.839v-28.579h22.203v28.579h22.451v17.365h-22.451
+    v80.782c0,6.367,0.393,10.461,1.178,12.28c0.786,1.819,2.067,3.267,3.846,4.341c1.777,1.075,4.32,1.613,7.628,1.613
+    c2.481,0,5.747-0.29,9.8-0.869L511.5,423.052z M408.672,343.725c-0.993-11.081-3.805-19.392-8.435-24.932
+    c-7.112-8.601-16.332-12.9-27.661-12.9c-10.254,0-18.875,3.432-25.862,10.295c-6.987,6.864-10.854,16.043-11.598,27.537H408.672z
+    M157.881,395.42c-4.035,0-7.459,1.435-10.279,4.354c-2.82,2.898-4.217,6.405-4.217,10.548c0,4.035,1.397,7.529,4.217,10.473
+    c2.82,2.944,6.244,4.425,10.279,4.425c4.139,0,7.662-1.48,10.56-4.425c2.906-2.943,4.35-6.438,4.35-10.473
+    c0-4.044-1.443-7.55-4.35-10.489C165.542,396.875,162.02,395.42,157.881,395.42z M301.047,267.196
+    c-11.577,5.086-26.172,7.629-43.785,7.629c-30.928,0-52.345-5.954-64.253-17.862l5.604,14.913h-58.84l-9.101-30.018H66.737
+    l-8.865,30.018H0.5L68.846,89.883h61.292l45.653,121.494l50.461-3.161c1.158,8.683,3.514,15.3,7.07,19.847
+    c5.789,7.361,14.058,11.039,24.808,11.039c8.021,0,14.203-1.879,18.544-5.644c4.342-3.763,6.513-8.125,6.513-13.086
+    c0-4.714-2.067-8.932-6.202-12.652c-4.135-3.722-13.728-7.235-28.777-10.544c-24.642-5.538-42.214-12.899-52.716-22.078
+    c-10.585-9.18-15.877-20.88-15.877-35.104c0-9.344,2.708-18.172,8.125-26.482c5.416-8.311,13.562-14.841,24.436-19.598
+    c10.874-4.755,25.779-7.133,44.716-7.133c23.237,0,40.954,4.323,53.151,12.962c12.197,8.642,19.453,22.39,21.769,41.243
+    l-52.965,3.102c-1.405-8.187-4.362-14.141-8.869-17.862c-4.506-3.721-10.729-5.581-18.667-5.581
+    c-6.533,0-11.453,1.385-14.761,4.155c-3.308,2.771-4.961,6.14-4.961,10.108c0,2.896,1.364,5.502,4.093,7.814
+    c2.646,2.4,8.931,4.633,18.854,6.698c24.56,5.293,42.152,10.649,52.778,16.063c10.626,5.416,18.358,12.137,23.195,20.156
+    c2.479,4.109,4.312,8.472,5.521,13.079V89.883h93.401c20.342,0,35.578,4.837,45.708,14.512
+    c10.13,9.676,15.195,23.443,15.195,41.306c0,18.357-5.521,32.705-16.56,43.041c-11.04,10.339-27.889,15.505-50.546,15.505h-30.762
+    v67.478h-56.438v-44.868c-1.574,6.286-4.216,12.271-7.939,17.952C321.638,254.649,312.624,262.111,301.047,267.196z
+    M392.464,167.407h13.769c10.832,0,18.44-1.88,22.823-5.645c4.383-3.762,6.573-8.577,6.573-14.45
+    c0-5.706-1.901-10.543-5.705-14.513c-3.804-3.969-10.957-5.954-21.459-5.954h-16.001V167.407z M118.871,202.386l-20.07-65.368
+    l-19.863,65.368H118.871z" />
+        </g>
+      </svg>
+    )],
     title: ".NET Application Development",
     description: "Design and develop robust and secure applications with .NET MVC and Web API. I follow clean architecture principles using patterns like CQRS, Mediator, and Unit of Work to deliver reliable enterprise-level solutions.",
   },
   {
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary">
-        <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(90 12 12)"></ellipse>
-        <ellipse cx="12" cy="12" rx="4" ry="10"></ellipse>
-         <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(60 12 12)"></ellipse>
-        <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(120 12 12)"></ellipse>
+    icons: [() => (
+      <svg
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+         width="32" height="32"
+      >
+        <circle cx="32.001" cy="31.955" r="4.478" fill="#00d8ff" />
+        <path
+          d="M32.33,22.516c7.635,0.052 15.965,0.609 21.683,5.708c0.168,0.15 0.33,0.306 0.488,0.467c1.349,1.375 2.054,3.595 0.965,5.422
+           c-2.234,3.751 -7.23,5.387 -12.067,6.394c-7.234,1.506 -14.798,1.518 -22.029,0.192c-4.161,-0.764 -8.416,-2.103 -11.373,-4.904
+           c-1.151,-1.09 -2.135,-2.524 -1.981,-4.12c0.25,-2.582 2.727,-4.239 4.812,-5.361c5.791,-3.116 12.847,-3.813 19.502,-3.798Z"
+          fill="#00d8ff"
+        />
+        <path
+          d="M42.115,10.703c2.793,0.071 4.24,3.429 4.431,5.909c0.038,0.493 0.052,0.988 0.046,1.483c-0.006,0.536 -0.035,1.072 -0.082,1.606
+           c-0.589,6.612 -3.608,12.909 -7.163,18.724c-3.477,5.688 -7.717,11.36 -13.485,13.996c-1.907,0.872 -4.175,1.41 -5.863,0.437
+           c-2.314,-1.333 -2.567,-4.451 -2.524,-6.816c0.011,-0.581 0.049,-1.162 0.109,-1.741c0.889,-8.56 5.228,-16.669 10.658,-23.655
+           c3.168,-4.076 6.937,-8.119 11.632,-9.583c0.739,-0.231 1.326,-0.371 2.241,-0.36Z"
+          fill="#00d8ff"
+        />
+        <path
+          d="M22.109,10.747c3.564,0.069 6.765,2.488 9.607,5.197c5.186,4.943 9.011,11.231 11.913,17.849
+           c2.248,5.127 4.316,10.882 2.478,16.292c-0.579,1.705 -2.044,3.265 -3.997,3.305c-3.581,0.072 -6.9,-2.532 -9.78,-5.335
+           c-7.225,-7.034 -12.589,-16.32 -14.427,-26.168c-0.132,-0.704 -0.237,-1.414 -0.309,-2.127c-0.059,-0.582 -0.096,-1.167 -0.106,-1.752
+           c-0.008,-0.472 0.002,-0.944 0.035,-1.414c0.022,-0.314 0.054,-0.626 0.097,-0.937c0.041,-0.292 0.093,-0.583 0.158,-0.871
+           c0.043,-0.191 0.091,-0.38 0.146,-0.568c0.539,-1.843 1.941,-3.485 4.185,-3.471Z"
+          fill="#00d8ff"
+        />
       </svg>
-    ),
+    )],
     title: "React App Development",
     description: "Create fast and interactive user interfaces with React. Ideal for modern SaaS platforms or single-page apps that prioritize user experience, responsiveness, and state management.",
   },
-   {
-    icon: () => (
-         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-primary">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-            <path d="M2 17l10 5 10-5"></path>
-            <path d="M2 12l10 5 10-5"></path>
-            <path d="M12 2v20"></path>
-            <path d="M12 12L2 7"></path>
-            <path d="M12 12l10-5"></path>
-         </svg>
-    ),
+  {
+    icons: [() => (
+      <svg  viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+        <path d="M16 2L3 7L5 24L16 30L27 24L29 7L16 2Z" fill="#DD0031" />
+        <path d="M16 2V30L27 24L29 7L16 2Z" fill="#C3002F" />
+        <path d="M15.9998 5.09375L7.87305 23.3638H10.9031L12.5368 19.2757H19.4348L21.0685 23.3638H24.0986L15.9998 5.09375ZM18.3736 16.7557H13.626L15.9998 11.0298L18.3736 16.7557Z" fill="white" />
+      </svg>
+    )],
     title: "Angular App Development",
     description: "Develop dynamic and maintainable SPAs with Angular. Includes Angular Material UI, real-time updates via SignalR, and state management using NgRx. Perfect for dashboards, admin panels, and B2C platforms.",
   },
   {
-    icon: Code,
+    icons: [
+      () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#e34f26" width="32" height="32"><path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>,
+      () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#1572b6" width="32" height="32"><path d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm308.2 127.9L192 205.2l-116.2-45.3h232.4zM192 240h110.7l-12.2 128.4-98.5 27.2V240h-1.1v155.7l-98.5-27.2L81.3 240H192z"/></svg>,
+      () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#f7df1e" width="32" height="32"><path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-62.9-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.4-6.5 22.4-19.2V256h-99.6v-32.2h132v157.6zm105.8-10.7c-33.1 0-51.7-15.6-62-35.1l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.4-6.5 22.4-19.2V256h-99.6v-32.2h132v157.6c0 43.6-25.6 63.5-62.9 63.5z"/></svg>,
+    ],
     title: "Static Web Design",
     description: "Craft simple, lightweight websites with blazing speed. Perfect for portfolios, landing pages, or NGOs. Technologies include HTML, CSS, Bootstrap, and Tailwind CSS with responsive and mobile-first layouts.",
   },
   {
-    icon: Server,
+    icons: [Server],
     title: "FTP & Deployment Management",
     description: "Manage seamless file transfers and deployments via FTP or cloud platforms. I handle everything from connecting to live servers, syncing code, and configuring domain setups for production-ready delivery.",
   },
   {
-    icon: Sheet,
+    icons: [Sheet],
     title: "Excel Data Management",
     description: "Automate and optimize spreadsheet workflows. I provide Excel-based tools, dashboards, and data formatting services that simplify complex tasks, from reports to imports/exports and analytics.",
   }
@@ -70,48 +212,52 @@ export function Services() {
   return (
     <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 scroll-mt-20">
       <div className="container mx-auto px-4 md:px-6">
-         <div className="lg:pl-24">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  </div>
-                </div>
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Services I Offer</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    From full-stack web solutions to static websites and app development — I help bring your digital ideas to life with precision and performance.
-                </p>
+        <div className="lg:pl-24">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
               </div>
             </div>
-             <div className="max-w-4xl mx-auto mb-12">
-                <Alert className="bg-primary/10 border-primary/30 text-primary-foreground">
-                  <AlertTriangle className="h-4 w-4 !text-primary" />
-                  <AlertTitle className="font-headline text-primary">Part-Time Availability Notice</AlertTitle>
-                  <AlertDescription className="text-primary/80">
-                    As a full-time developer at IBS Fulcro, Mumbai, I provide these services as part-time side hustles. I primarily work on these projects during weekends (Saturday & Sunday) and my free time at night. I enjoy this work and like to take the time to build things right. The prices or fees mentioned are rough market estimates and are always negotiable in my case.
-                  </AlertDescription>
-                </Alert>
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Services I Offer</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                From full-stack web solutions to static websites and app development — I help bring your digital ideas to life with precision and performance.
+              </p>
             </div>
+          </div>
+          <div className="max-w-4xl mx-auto mb-12">
+            <Alert className="bg-primary/10 border-primary/30 text-primary-foreground">
+              <AlertTriangle className="h-4 w-4 !text-primary" />
+              <AlertTitle className="font-headline text-primary">Part-Time Availability Notice</AlertTitle>
+              <AlertDescription className="text-primary/80">
+                As a full-time developer at IBS Fulcro, Mumbai, I provide these services as part-time side hustles. I primarily work on these projects during weekends (Saturday & Sunday) and my free time at night. I enjoy this work and like to take the time to build things right. The prices or fees mentioned are rough market estimates and are always negotiable in my case.
+              </AlertDescription>
+            </Alert>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {servicesData.map((service, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 rounded-2xl p-6 flex flex-col items-center text-center group hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
-                    <div className="p-4 rounded-full bg-primary/10 mb-4 transition-all duration-300 group-hover:scale-110">
-                        <service.icon />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicesData.map((service, index) => (
+              <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 rounded-2xl p-6 flex flex-col items-center text-center group hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                <div className="p-4 rounded-full bg-primary/10 mb-4 transition-all duration-300 group-hover:scale-110 flex items-center justify-center gap-x-2">
+                  {service?.icons?.map((Icon, idx) => (
+                    <div key={idx} className={service.icons.length > 1 ? '-mx-1' : ''}>
+                       <Icon className="w-8 h-8 text-primary" />
                     </div>
-                  <CardHeader className="p-0">
-                    <CardTitle className="text-xl font-headline mb-2">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <CardDescription className="text-muted-foreground">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-         </div>
+                  ))}
+                </div>
+                <CardHeader className="p-0">
+                  <CardTitle className="text-xl font-headline mb-2">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <CardDescription className="text-muted-foreground">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
