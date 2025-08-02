@@ -9,50 +9,44 @@ export function useScrollSpy(ids: string[], options?: IntersectionObserverInit) 
 
   useEffect(() => {
     const elements = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
-
+    
+    // Disconnect any existing observer
     if (observer.current) {
       observer.current.disconnect();
     }
 
-    // Default to the first ID if it exists
-    if (elements.length > 0) {
-      setActiveId(elements[0].id);
+    // Set home as default active section
+    if (ids[0]) {
+      setActiveId(ids[0]);
     }
-    
-    observer.current = new IntersectionObserver((entries) => {
-      let bestEntry: IntersectionObserverEntry | null = null;
 
+    observer.current = new IntersectionObserver((entries) => {
+      let currentBestEntry: IntersectionObserverEntry | null = null;
+      
       entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-            // Prioritize the entry that is most visible
-            if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
-                bestEntry = entry;
+        if (entry.isIntersecting) {
+            // Find the entry with the highest intersection ratio (most visible)
+            if (!currentBestEntry || entry.intersectionRatio > currentBestEntry.intersectionRatio) {
+                currentBestEntry = entry;
             }
         }
       });
       
-      if (bestEntry) {
-        setActiveId(bestEntry.target.id);
+      if (currentBestEntry) {
+          setActiveId(currentBestEntry.target.id);
       } else {
-        // If nothing is intersecting, find the last element that was intersecting
-        // This helps when scrolling fast or leaving the viewport
-        let lastVisibleId: string | null = null;
-        for (let i = elements.length - 1; i >= 0; i--) {
-            const el = elements[i];
-            const rect = el.getBoundingClientRect();
-            if (rect.top <= (options?.rootMargin ? parseInt(options.rootMargin) : 0)) {
-                lastVisibleId = el.id;
-                break;
-            }
-        }
-        if (lastVisibleId) {
-            setActiveId(lastVisibleId);
-        }
+        // Fallback for when scrolling fast or leaving the viewport,
+        // find the last element that was visible above the viewport center
+         const sortedEntries = entries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+         const lastVisible = sortedEntries.find(entry => entry.boundingClientRect.top < window.innerHeight / 2);
+         if(lastVisible){
+            setActiveId(lastVisible.target.id);
+         }
       }
     }, {
-        rootMargin: '-50% 0px -50% 0px', // A horizontal line in the middle of the viewport
-        threshold: 0,
-        ...options
+      rootMargin: '-50% 0px -50% 0px', // A horizontal line in the middle of the viewport
+      threshold: [0, 0.25, 0.5, 0.75, 1], // More thresholds for accuracy
+      ...options
     });
 
     elements.forEach((el) => {
@@ -64,7 +58,8 @@ export function useScrollSpy(ids: string[], options?: IntersectionObserverInit) 
     return () => {
       observer.current?.disconnect();
     };
-  }, [ids, options]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ids.join(','), options]); // Rerun effect if IDs change
 
   return activeId;
 }
