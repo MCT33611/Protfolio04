@@ -5,10 +5,10 @@ import { z } from 'zod';
 
 const repoSchema = z.array(z.object({
   name: z.string(),
-  languages_url: z.string().url(),
+  languages_url: z.string().url().nullable(),
 }));
 
-const languagesSchema = z.record(z.string(), z.number());
+const languagesSchema = z.record(z.string(), z.number()).nullable();
 
 type LanguageData = {
   name: string;
@@ -41,26 +41,32 @@ export async function getGithubLanguageData(): Promise<LanguageData[] | null> {
     const repos = repoSchema.parse(await repoRes.json());
     
     // Fetch languages for each repository
-    const languagePromises = repos.map(repo =>
-      fetch(repo.languages_url, {
-        headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
-        },
-      }).then(res => res.json().then(languagesSchema.parse))
-    );
+    const languagePromises = repos
+      .filter(repo => repo.languages_url) // Filter out repos with no languages_url
+      .map(repo =>
+        fetch(repo.languages_url!, { // Non-null assertion is safe due to filter
+          headers: {
+            Authorization: `token ${GITHUB_TOKEN}`,
+          },
+        }).then(res => {
+            if (!res.ok) return null; // Handle non-ok responses from language fetches
+            return res.json().then(languagesSchema.parse)
+        })
+      );
 
-    const languagesPerRepo = await Promise.all(languagePromises);
+    const languagesPerRepo = (await Promise.all(languagePromises)).filter(Boolean);
 
     // Aggregate language bytes
     const totalBytes: Record<string, number> = {};
     languagesPerRepo.forEach(languages => {
-      for (const lang in languages) {
-        if (totalBytes[lang]) {
-          totalBytes[lang] += languages[lang];
-        } else {
-          totalBytes[lang] = languages[lang];
+        if (!languages) return;
+        for (const lang in languages) {
+            if (totalBytes[lang]) {
+            totalBytes[lang] += languages[lang];
+            } else {
+            totalBytes[lang] = languages[lang];
+            }
         }
-      }
     });
     
     const totalCodeBytes = Object.values(totalBytes).reduce((sum, bytes) => sum + bytes, 0);
