@@ -52,20 +52,10 @@ export function Header() {
                 isMobile 
                   ? "h-12 w-12" 
                   : "w-full justify-start gap-4 lg:w-12 lg:h-12 lg:justify-center",
-                isActive && "text-primary"
+                isActive && "text-primary bg-primary/20"
               )}
             >
               <Link href={link.href} title={link.label}>
-                 <div className={cn(
-                  "absolute inset-0 rounded-full bg-primary/20 transition-all duration-300 ease-in-out transform scale-0 opacity-0",
-                  "group-hover:scale-100 group-hover:opacity-100",
-                  isActive && "scale-100 opacity-100"
-                )}></div>
-                <div className={cn(
-                  "absolute inset-0 rounded-full bg-primary/10 transition-all duration-300 ease-in-out transform scale-0 opacity-0 animate-pulse",
-                   "group-hover:scale-125 group-hover:opacity-100",
-                   isActive && "scale-125 opacity-100"
-                )}></div>
                  <link.Icon className={cn("h-5 w-5 relative z-10 transition-transform duration-300 ease-in-out", "group-hover:scale-110", isActive && "scale-110")} />
                 <span className={cn("lg:hidden relative z-10", isMobile && "hidden")}>{link.label}</span>
               </Link>
@@ -78,10 +68,8 @@ export function Header() {
             <div className="flex-grow" />
             <div className="flex-col items-center gap-2 mb-4 hidden lg:flex">
                 {socialLinks.map(({ name, Icon, url }) => (
-                  <Button key={name} variant="ghost" size="icon" asChild className="relative group text-muted-foreground rounded-full transition-all duration-300 ease-in-out hover:text-primary">
+                  <Button key={name} variant="ghost" size="icon" asChild className="relative group text-muted-foreground rounded-full transition-all duration-300 ease-in-out hover:text-primary hover:bg-primary/20">
                     <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
-                      <div className="absolute inset-0 rounded-full bg-primary/20 transition-all duration-300 ease-in-out transform scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"></div>
-                      <div className="absolute inset-0 rounded-full bg-primary/10 transition-all duration-300 ease-in-out transform scale-0 opacity-0 animate-pulse group-hover:scale-125 group-hover:opacity-100"></div>
                       <Icon className="h-5 w-5 relative z-10 transition-transform duration-300 ease-in-out group-hover:scale-110" />
                     </a>
                   </Button>
