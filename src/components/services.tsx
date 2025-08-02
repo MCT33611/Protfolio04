@@ -10,7 +10,7 @@ const servicesData = [
   {
     icon: FileCode,
     title: "Full Stack Web Development",
-    description: "Build powerful, scalable web applications using modern stacks like Angular + ASP.NET. Whether it's a service platform or e-commerce store, I deliver clean architecture, responsive designs, and seamless integrations from backend to frontend.",
+    description: "Build powerful, scalable web applications using modern stacks like Angular or React with ASP.NET (Web API or MVC). Whether it's a service platform or e-commerce store, I deliver clean architecture, responsive designs, and seamless integrations from backend to frontend.",
   },
   {
     icon: () => (
