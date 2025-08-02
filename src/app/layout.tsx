@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Muhammed Fahmi',
   description: 'A portfolio showcasing the work of Fahmi',
   icons: {
-    icon: '/profile.jpeg',
+    icon: 'icons8-f-16.png',
   },
 };
 
@@ -23,7 +23,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/profile.jpeg" type="image/jpeg" />
       </head>
       <body className="font-body antialiased">
         <div className="relative flex min-h-screen flex-col">
