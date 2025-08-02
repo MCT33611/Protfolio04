@@ -2,9 +2,11 @@
 'use client';
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Code, Server, Bot, Sheet, GitMerge, FileCode, Dot } from 'lucide-react';
+import { Code, Server, Bot, Sheet, GitMerge, FileCode, AlertTriangle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Image from "next/image";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
 
 const servicesData = [
   {
@@ -81,6 +83,15 @@ export function Services() {
                     From full-stack web solutions to static websites and app development — I help bring your digital ideas to life with precision and performance.
                 </p>
               </div>
+            </div>
+             <div className="max-w-4xl mx-auto mb-12">
+                <Alert variant="destructive" className="bg-destructive/10 border-destructive/30 text-destructive-foreground">
+                  <AlertTriangle className="h-4 w-4 !text-destructive" />
+                  <AlertTitle className="font-headline text-destructive">Part-Time Availability Notice</AlertTitle>
+                  <AlertDescription className="text-destructive/80">
+                    As a full-time developer at IBS Fulcro, Mumbai, I provide these services as part-time side hustles. I primarily work on these projects during weekends (Saturday & Sunday) and my free time at night. I enjoy this work and like to take the time to build things right. The prices or fees mentioned are rough market estimates and are always negotiable in my case.
+                  </AlertDescription>
+                </Alert>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
