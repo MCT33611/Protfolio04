@@ -98,38 +98,36 @@ export function Projects() {
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                         <div className="p-1 h-full">
                         <Dialog>
-                            <Card className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group h-full flex flex-col relative">
-                                <ProjectPreview 
-                                    liveUrl={project.liveUrl}
-                                    imageUrl={project.imageUrl}
-                                    imageHint={project.imageHint}
-                                    title={project.title}
-                                />
-                                <CardContent className="p-6 flex flex-col flex-grow">
-                                    <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
-                                    <div className="flex flex-wrap gap-2 mb-4 overflow-hidden h-7">
-                                        {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                                    </div>
-                                    <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
-                                    <div className="flex items-center flex-wrap gap-4 mt-auto pt-4">
-                                        <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary/20">
-                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                                <Github className="mr-2 h-4 w-4" /> GitHub
-                                            </a>
-                                        </Button>
-                                        <Button asChild variant="default" size="sm" className="rounded-full">
-                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                                <ExternalLink className="mr-2 h-4 w-4" /> Live
-                                            </a>
-                                        </Button>
-                                        <DialogTrigger asChild>
-                                            <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 ml-auto">
-                                                <PlusCircle className="h-4 w-4" />
+                            <DialogTrigger asChild>
+                                <Card className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden group h-full flex flex-col relative cursor-pointer">
+                                    <ProjectPreview 
+                                        liveUrl={project.liveUrl}
+                                        imageUrl={project.imageUrl}
+                                        imageHint={project.imageHint}
+                                        title={project.title}
+                                    />
+                                    <CardContent className="p-6 flex flex-col flex-grow">
+                                        <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
+                                        <div className="flex flex-wrap gap-2 mb-4 overflow-hidden h-7">
+                                            {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                                        </div>
+                                        <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
+                                        <div className="flex items-center flex-wrap gap-4 mt-auto pt-4">
+                                            <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary/20" onClick={(e) => e.stopPropagation()}>
+                                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                                    <Github className="mr-2 h-4 w-4" /> GitHub
+                                                </a>
                                             </Button>
-                                        </DialogTrigger>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                            <Button asChild variant="default" size="sm" className="rounded-full" onClick={(e) => e.stopPropagation()}>
+                                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                                    <ExternalLink className="mr-2 h-4 w-4" /> Live
+                                                </a>
+                                            </Button>
+
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </DialogTrigger>
                             <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-lg border-primary/30 text-foreground">
                                 <DialogHeader>
                                 <DialogTitle className="text-2xl font-headline text-primary">{project.title}</DialogTitle>
