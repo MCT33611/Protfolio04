@@ -19,7 +19,7 @@ export default function AboutPage() {
                <div className="relative w-full max-w-md mx-auto">
                     <div className="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-2xl transform -rotate-3"></div>
                     <Image
-                      src="https://placehold.co/600x750.png"
+                      src="/profile.jpeg"
                       alt="About Me"
                       width={600}
                       height={750}
@@ -37,10 +37,10 @@ export default function AboutPage() {
                     </div>
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl font-headline text-primary">About Fahmi</h1>
                     <p className="text-muted-foreground md:text-lg">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        I'm Muhammed Fahmi, a passionate and detail-oriented Full Stack Developer with a strong focus on building scalable and maintainable web applications. I specialize in ASP.NET and Angular, blending back-end efficiency with front-end elegance. Currently, I work full-time as an Associate Software Developer at IBS Fulcro, Mumbai, where I contribute to building enterprise-grade software solutions for diverse clients. At IBS, I'm constantly sharpening my skills in real-world projects, collaborating with experienced teams, and adhering to industry best practices for clean code, agile development, and CI/CD pipelines.
                     </p>
                     <p className="text-muted-foreground md:text-lg">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                        My journey into web development started with curiosity and quickly evolved into a committed career path. After completing my training at Brototype, where I specialized in Full Stack Web Development using ASP.NET and Angular, I developed a strong foundation in software engineering principles. During this time, I built multiple real-world projects from scratch, including Craftify and Plant Palace, which reflect not only my technical skills but also my problem-solving ability, UI/UX sensibility, and a strong understanding of scalable system design.
                     </p>
                 </div>
             </div>
@@ -49,6 +49,32 @@ export default function AboutPage() {
       </section>
       
       <section className="py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6 lg:pl-24">
+            <h2 className="text-3xl font-bold text-center mb-12 font-headline text-primary">More About My Work</h2>
+            <div className="max-w-4xl mx-auto space-y-8 text-muted-foreground">
+               <p>
+                  Craftify is a feature-rich service marketplace platform where users can book professional services from verified workers. It includes real-time communication using SignalR, secure payments via Razorpay, and admin dashboards with data visualization. The application is built using Clean Architecture, CQRS, Mediator pattern, and NGRX for state management, with deployments on AWS and Vercel.
+                </p>
+                <p>
+                  Plant Palace is a full-fledged e-commerce platform for gardening products, built using the .NET MVC stack. It features a product filtering system, wishlist, cart, review system, Stripe integration, and an admin panel with interactive charts and jQuery-powered tables.
+                </p>
+                <p>
+                  Beyond my full-time role, I actively pursue side hustles by collaborating with international clients on freelance projects. This gives me exposure to different project management styles, user expectations, and tech stacks, making me more adaptable and resourceful. These experiences have allowed me to build strong communication skills and a client-focused approach to development.
+                </p>
+                 <p>
+                  My mini projects, such as Ashmi Fitness Challenge (AFC) and Tha’avun, show my ability to rapidly build and deploy static and semi-dynamic websites using React, Tailwind CSS, Bootstrap, and API integrations like Google Drive API. These projects are live and publicly available, demonstrating my commitment to real-world usability and performance optimization.
+                </p>
+                <p>
+                  Technically, I’m proficient in C#, TypeScript, JavaScript, HTML/CSS, and SQL, with deep experience in ASP.NET (MVC & Web API), Angular, Entity Framework Core, and UI libraries like Angular Material UI. I follow best practices such as Repository Pattern, Unit of Work, and Clean Architecture to ensure modular, testable, and maintainable codebases.
+                </p>
+                <p>
+                  I consider myself a lifelong learner, continuously exploring new tools and patterns to stay updated in this ever-evolving tech landscape. My ultimate goal is to keep building meaningful software that solves real problems while growing both technically and creatively in the process.
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-24 bg-secondary/20">
         <div className="container mx-auto px-4 md:px-6 lg:pl-24">
             <h2 className="text-3xl font-bold text-center mb-12 font-headline text-primary">Skills Summary</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
