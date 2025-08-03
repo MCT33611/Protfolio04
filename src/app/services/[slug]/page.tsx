@@ -7,6 +7,25 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { CheckCircle, IndianRupee } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const service = services.find((s) => s.slug === params.slug);
+
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+    };
+  }
+
+  return {
+    title: `${service.title} | Muhammed Fahmi`,
+    description: service.shortDescription,
+     icons: {
+      icon: '/icons8-f-16.png',
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return services.map((service) => ({
@@ -59,6 +78,27 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           
           {/* Left Column (Main Details) */}
           <div className="lg:col-span-2 space-y-12">
+            
+            {/* Image Gallery */}
+            <div className="grid grid-cols-2 gap-4">
+              <Image 
+                src={service.images[1]} 
+                alt={`${service.title} detail 1`} 
+                width={600} 
+                height={400} 
+                className="rounded-2xl object-cover w-full h-auto"
+                data-ai-hint={service.imageHints[1]}
+              />
+              <Image 
+                src={service.images[2]} 
+                alt={`${service.title} detail 2`} 
+                width={600} 
+                height={400} 
+                className="rounded-2xl object-cover w-full h-auto"
+                data-ai-hint={service.imageHints[2]}
+               />
+            </div>
+            
             {/* Detailed Description */}
             <div>
               <h2 className="text-3xl font-bold font-headline text-primary mb-4">Detailed Description</h2>
