@@ -60,7 +60,7 @@ export const services = [
     shortDescription: "Develop dynamic SPAs with Angular, Material UI, and NgRx. Perfect for dashboards, admin panels, and B2C platforms.",
     icons: [AngularIcon],
     images: [
-      "https://images.unsplash.com/photo-1517694712202-1428bc38aa5a?q=80&w=1200&h=600&auto=format&fit=crop",
+      "https://unsplash.com/photos/Wpnoqo2plFA/download?force=true&w=1200&h=600",
     ],
     imageHints: ["angular developer"],
     detailedDescription: "Develop powerful Angular SPAs tailored for enterprise use, dashboards, admin panels, or service platforms. I focus on modular folder structure, lazy loading, NgRx state management, Angular Material UI, and API-based content handling with SignalR for real-time updates.",
