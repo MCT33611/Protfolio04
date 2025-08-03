@@ -26,7 +26,7 @@ export const services = [
     shortDescription: "Design and develop robust and secure applications with .NET MVC and Web API, following clean architecture principles.",
     icons: [DotNetIcon],
      images: [
-      "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?q=80&w=1200&h=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&h=600&auto=format&fit=crop",
     ],
     imageHints: ["dotnet app visual"],
     detailedDescription: "I create robust web applications using .NET MVC and Web API, focusing on business logic, performance, and secure data handling. Ideal for enterprise tools, CRM systems, admin panels, and business automation. Code architecture follows the Repository pattern, Clean Architecture, and service-based logic for better testing and maintainability.",
