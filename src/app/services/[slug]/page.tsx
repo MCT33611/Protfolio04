@@ -1,8 +1,9 @@
+
 import { services } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { CheckCircle, IndianRupee } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
