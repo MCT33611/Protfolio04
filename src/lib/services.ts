@@ -28,7 +28,7 @@ export const services = [
     icons: [DotNetIcon],
      images: [
       "https://www.spec-india.com/wp-content/uploads/2022/06/Net-Developer.png",
-      "https://unsplash.com/photos/NEFDE_n2geI/download?force=true&w=600&h=400",
+      "https://unsplash.com/photos/9p_O_Rcf2Y4/download?force=true&w=600&h=400",
       "https://unsplash.com/photos/m_HRfLhgABo/download?force=true&w=600&h=400",
     ],
     imageHints: ["dotnet app visual", "c sharp code", "software architecture"],
