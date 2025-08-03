@@ -111,7 +111,7 @@ export const services = [
     shortDescription: "Automate and optimize spreadsheet workflows with custom tools, dashboards, and data formatting services.",
     icons: [SheetIcon],
     images: [
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&h=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=1200&h=600&auto=format&fit=crop"
     ],
     imageHints: ["excel dashboard"],
     detailedDescription: "Streamline your business data with smart Excel solutions. I help automate spreadsheets, create dynamic dashboards, apply formulas, build filters, and organize data. Perfect for billing, reports, or inventory. I also help with imports/exports to/from web apps.",
