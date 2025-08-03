@@ -1,3 +1,4 @@
+
 import { ServerIcon, SheetIcon } from 'lucide-react';
 import { AngularIcon, CSSIcon, DotNetIcon, HTMLIcon, JSIcon, ReactIcon } from './icons';
 
@@ -27,8 +28,8 @@ export const services = [
     shortDescription: "Design and develop robust and secure applications with .NET MVC and Web API, following clean architecture principles.",
     icons: [DotNetIcon],
      images: [
-      "https://www.spec-india.com/wp-content/uploads/2022/06/Net-Developer.png",
-      "https://unsplash.com/photos/9p_O_Rcf2Y4/download?force=true&w=600&h=400",
+      "https://unsplash.com/photos/TD1WxkEldfU/download?force=true&w=1200&h=600",
+      "https://unsplash.com/photos/NEFDE99Q4a4/download?force=true&w=600&h=400",
       "https://unsplash.com/photos/m_HRfLhgABo/download?force=true&w=600&h=400",
     ],
     imageHints: ["dotnet app visual", "c sharp code", "software architecture"],
