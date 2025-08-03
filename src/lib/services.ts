@@ -9,8 +9,8 @@ export const services = [
     icons: [AngularIcon, DotNetIcon, ReactIcon],
     images: [
       "https://unsplash.com/photos/hpjSkU2UYSU/download?force=true&w=1200&h=600",
-      "https://pexels.com/photo/coding-on-laptop-closeup-546819/download?auto=compress&h=400&w=600",
-      "https://pexels.com/photo/code-on-screen-in-dark-room-574071/download?auto=compress&h=400&w=600",
+      "https://unsplash.com/photos/2zDw14yCYqk/download?force=true&w=600&h=400",
+      "https://unsplash.com/photos/SYTO3xs06fU/download?force=true&w=600&h=400",
     ],
     imageHints: ["full stack concept", "html code", "developer desk"],
     detailedDescription: "I offer complete end-to-end web development using modern full-stack technologies, primarily Angular for frontend and ASP.NET Core Web API for backend. Whether you're launching a new platform, redesigning your current site, or need advanced functionality like real-time chat, payment integrations, or admin dashboards — I deliver scalable and maintainable solutions. I implement clean architecture, CQRS, Mediator, and Unit of Work patterns to ensure code quality and project longevity.",
@@ -28,8 +28,8 @@ export const services = [
     icons: [DotNetIcon],
      images: [
       "https://www.spec-india.com/wp-content/uploads/2022/06/Net-Developer.png",
-      "https://pexels.com/photo/csharp-code-on-monitor-1093947/download?auto=compress&h=400&w=600",
-      "https://pixabay.com/photos/programmer-computer-code-working-924920/download?image_type=photo&orientation=horizontal&min_width=600&min_height=400",
+      "https://unsplash.com/photos/NEFDE_n2geI/download?force=true&w=600&h=400",
+      "https://unsplash.com/photos/m_HRfLhgABo/download?force=true&w=600&h=400",
     ],
     imageHints: ["dotnet app visual", "c sharp code", "software architecture"],
     detailedDescription: "I create robust web applications using .NET MVC and Web API, focusing on business logic, performance, and secure data handling. Ideal for enterprise tools, CRM systems, admin panels, and business automation. Code architecture follows the Repository pattern, Clean Architecture, and service-based logic for better testing and maintainability.",
@@ -104,8 +104,8 @@ export const services = [
     icons: [ServerIcon],
     images: [
       "https://unsplash.com/photos/0wRXAXqIp58/download?force=true&w=1200&h=600",
-      "https://unsplash.com/photos/m_HRfLhgABo/download?force=true&w=600&h=400",
       "https://unsplash.com/photos/T0iFf-s42oI/download?force=true&w=600&h=400",
+      "https://unsplash.com/photos/OqdFw2G1W4c/download?force=true&w=600&h=400",
     ],
     imageHints: ["deployment dashboard", "server room", "cloud infrastructure"],
     detailedDescription: "Effortlessly move your project from development to production. I handle secure FTP setup, file deployment, and connection to domains or subdomains. I also configure DNS records, SSL (HTTPS), and CI/CD pipelines if needed. Ideal for small business sites, blogs, and company dashboards.",
