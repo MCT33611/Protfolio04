@@ -27,7 +27,7 @@ export const services = [
     shortDescription: "Design and develop robust and secure applications with .NET MVC and Web API, following clean architecture principles.",
     icons: [DotNetIcon],
      images: [
-      "https://unsplash.com/photos/TD1WxkEldfU/download?force=true&w=1200&h=600",
+      "https://www.spec-india.com/wp-content/uploads/2022/06/Net-Developer.png",
       "https://pexels.com/photo/csharp-code-on-monitor-1093947/download?auto=compress&h=400&w=600",
       "https://pixabay.com/photos/programmer-computer-code-working-924920/download?image_type=photo&orientation=horizontal&min_width=600&min_height=400",
     ],

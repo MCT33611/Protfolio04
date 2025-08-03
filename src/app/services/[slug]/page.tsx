@@ -48,7 +48,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                 </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4">{service.title}</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80">{service.shortDescription}</p>
+            <p className="text-lg md:text-xl text-primary-foreground/80 text-white">{service.shortDescription}</p>
           </div>
         </div>
       </section>
@@ -59,27 +59,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           
           {/* Left Column (Main Details) */}
           <div className="lg:col-span-2 space-y-12">
-            
-            {/* Image Gallery */}
-            <div className="grid grid-cols-2 gap-4">
-              <Image 
-                src={service.images[1]} 
-                alt={`${service.title} detail 1`} 
-                width={600} 
-                height={400} 
-                className="rounded-2xl object-cover w-full h-full" 
-                data-ai-hint={service.imageHints[1]}
-              />
-              <Image 
-                src={service.images[2]} 
-                alt={`${service.title} detail 2`} 
-                width={600} 
-                height={400} 
-                className="rounded-2xl object-cover w-full h-full" 
-                data-ai-hint={service.imageHints[2]}
-                />
-            </div>
-            
             {/* Detailed Description */}
             <div>
               <h2 className="text-3xl font-bold font-headline text-primary mb-4">Detailed Description</h2>

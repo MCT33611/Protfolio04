@@ -20,7 +20,7 @@ export async function getGithubLanguageData(): Promise<LanguageData[] | null> {
   const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 
   if (!GITHUB_TOKEN || !GITHUB_USERNAME) {
-    console.error("GitHub token or username is not set in environment variables.");
+    console.warn("GitHub token or username not set. Using fallback skills data. Please create a .env.local file with GITHUB_USERNAME and GITHUB_TOKEN to fetch dynamic data.");
     return null;
   }
 
@@ -34,7 +34,7 @@ export async function getGithubLanguageData(): Promise<LanguageData[] | null> {
     });
 
     if (!repoRes.ok) {
-      console.error(`Failed to fetch repos: ${repoRes.statusText}`);
+      console.error(`Failed to fetch GitHub repos: ${repoRes.statusText}. Please check if your GITHUB_TOKEN has the correct 'repo' permissions and is not expired.`);
       return null;
     }
 
@@ -88,10 +88,10 @@ export async function getGithubLanguageData(): Promise<LanguageData[] | null> {
 
   } catch (error) {
     if (error instanceof z.ZodError) {
-        console.error("Zod validation error:", error.issues);
+        console.error("Zod validation error fetching GitHub data:", error.issues);
     } else {
-        console.error("An unexpected error occurred:", error);
+        console.error("An unexpected error occurred while fetching GitHub data:", error);
     }
-    return null;
+    return null; // Ensure fallback is used on any error
   }
 }
